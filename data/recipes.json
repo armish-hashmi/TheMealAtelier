@@ -1,0 +1,112 @@
+{
+    "recipes": [
+        {
+            "id": 1,
+            "title": "Garden Salad",
+            "description": "Fresh greens topped with vinaigrette and seasonal vegetables.",
+            "image": "/images/Garden-Salad_47-SQ.webp",
+            "rating": 4.5,
+            "calories": 120,
+            "category": ["Vegan", "Vegetarian", "Gluten-Free"],
+            "ingredients": [
+                "Mixed greens",
+                "Cherry tomatoes",
+                "Cucumber",
+                "Red onion",
+                "Vinaigrette dressing"
+            ],
+            "instructions": "Wash and dry all vegetables. Toss greens with tomatoes, cucumber, and onion. Drizzle with vinaigrette and serve immediately."
+        },
+        {
+            "id": 2,
+            "title": "Spiced Lamb Tacos",
+            "description": "Tender pulled lamb seasoned with cumin and chili, served in warm tortillas with pickled onions.",
+            "image": "/images/RS1224DINN_0665_Spiced-Lamb-Tacos_preview-f20fd405e6b64343944ed30e15adf64b.jpg",
+            "rating": 4.5,
+            "calories": 380,
+            "category": ["Gluten-Free"],
+            "ingredients": [
+                "Pulled lamb",
+                "Cumin",
+                "Chili powder",
+                "Tortillas",
+                "Pickled onions",
+                "Fresh cilantro"
+            ],
+            "instructions": "Season lamb with cumin and chili. Slow cook for 4 hours until tender. Shred and serve in warm tortillas with pickled onions."
+        },
+        {
+            "id": 3,
+            "title": "Breakfast Casserole",
+            "description": "A hearty bake featuring farm-fresh eggs, savory sausage, and melted cheddar cheese.",
+            "image": "/images/breakfast-casserole-recipes.jpg",
+            "rating": 4.5,
+            "calories": 450,
+            "category": ["Gluten-Free"],
+            "ingredients": [
+                "6 eggs",
+                "Sausage",
+                "Cheddar cheese",
+                "Bell peppers",
+                "Onion",
+                "Salt and pepper"
+            ],
+            "instructions": "Preheat oven to 375°F. Cook sausage and vegetables. Whisk eggs and combine all ingredients. Bake for 35 minutes until golden."
+        },
+        {
+            "id": 4,
+            "title": "Chicken Wontons",
+            "description": "Hand-folded dumplings filled with minced chicken and ginger, served with a soy dipping sauce.",
+            "image": "/images/Chicken-Wontons-in-Spicy-Chili-Sauce-Square.webp",
+            "rating": 4.5,
+            "calories": 280,
+            "category": ["Dairy-Free"],
+            "ingredients": [
+                "Wonton wrappers",
+                "Minced chicken",
+                "Fresh ginger",
+                "Garlic",
+                "Soy sauce",
+                "Sesame oil"
+            ],
+            "instructions": "Mix chicken with ginger, garlic and sesame oil. Place filling in wonton wrappers and fold. Boil for 5 minutes and serve with soy sauce."
+        },
+        {
+            "id": 5,
+            "title": "Creamy Garlic Chicken",
+            "description": "Pan-seared chicken breasts smothered in a rich, velvety garlic and parmesan cream sauce.",
+            "image": "/images/Creamy-Garlic-Chicken.webp",
+            "rating": 4.5,
+            "calories": 520,
+            "category": ["Gluten-Free", "Low-Carb"],
+            "ingredients": [
+                "Chicken breasts",
+                "Heavy cream",
+                "Parmesan cheese",
+                "Garlic cloves",
+                "Butter",
+                "Italian seasoning"
+            ],
+            "instructions": "Sear chicken in butter until golden. Remove and sauté garlic. Add cream and parmesan, simmer until thick. Return chicken and coat in sauce."
+        },
+        {
+            "id": 6,
+            "title": "Chicken Biryani",
+            "description": "A flavorful Indian rice dish with aromatic spices.",
+            "image": "/images/Chicken-Biryani-Recipe-500x500.jpg",
+            "rating": 4.5,
+            "calories": 600,
+            "category": ["Dairy-Free", "Gluten-Free"],
+            "ingredients": [
+                "Basmati rice",
+                "Chicken",
+                "Yogurt",
+                "Onions",
+                "Biryani spices",
+                "Saffron",
+                "Fresh mint"
+            ],
+            "instructions": "Marinate chicken in yogurt and spices. Layer with parboiled rice. Cook on dum (slow steam) for 30 minutes until fragrant."
+        }
+    ]
+}

@@ -1,0 +1,121 @@
+ 
+{
+  "users": [
+    { "id": 1, "username": "demo", "password": "1234" }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Avocado Toast",
+      "type": "breakfast",
+      "dietary": ["vegan", "vegetarian"],
+      "calories": 320,
+      "rating": 4.5,
+      "description": "Creamy avocado on sourdough with a hint of lemon.",
+      "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=400",
+      "ingredients": ["2 slices sourdough", "1 avocado", "lemon juice", "salt", "chili flakes"],
+      "steps": [
+        "Toast the bread until golden.",
+        "Mash avocado with lemon juice and salt.",
+        "Spread on toast and top with chili flakes."
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Garden Salad",
+      "type": "breakfast",
+      "dietary": ["vegan", "vegetarian"],
+      "calories": 120,
+      "rating": 4.5,
+      "description": "Fresh greens topped with vinaigrette and seasonal vegetables.",
+      "image": "",
+      "ingredients": [
+        "Ingredients",
+        "Salad Base:",
+        "5 to 6 cups chopped leafy greens (Romaine, iceberg, or mixed baby greens)",
+        "1 cup cherry tomatoes, halved (or 2 regular tomatoes, cut into wedges)",
+        "1 medium cucumber, sliced",
+        "0.5 cup grated or julienned carrot",
+        "0.5 cup red onion, thinly sliced (opt,ional)",
+        "Simple Vinaigrette:",
+        "3 tbsp extra virgin olive oil",
+        "1 tbsp apple cider vinegar or lemon juice",
+        "0.5 tsp Dijon mustard (for emulsification)",
+        "0.5 tsp salt",
+        "0.25 tsp black pepper"],
+      "steps": [
+        "Instructions",
+        "Prep the Greens: Wash and thoroughly dry your lettuce leaves. Tear or chop them into bite-sized pieces.",
+        "Make the Dressing: Add the olive oil, vinegar, Dijon mustard, salt, and pepper into a small jar. Secure the lid tightly and shake vigorously until fully combined and slightly thickened.",
+        "Toss the Salad: Place the chopped lettuce, tomatoes, cucumbers, and carrots into a large serving bowl.",
+        "Serve: Drizzle the vinaigrette over the salad just before serving, toss gently to coat, and enjoy immediately."
+         ]
+    },
+    {
+      "id": 1,
+      "name": "Avocado Toast",
+      "type": "breakfast",
+      "dietary": ["vegan", "vegetarian"],
+      "calories": 320,
+      "rating": 4.5,
+      "description": "Creamy avocado on sourdough with a hint of lemon.",
+      "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=400",
+      "ingredients": ["2 slices sourdough", "1 avocado", "lemon juice", "salt", "chili flakes"],
+      "steps": [
+        "Toast the bread until golden.",
+        "Mash avocado with lemon juice and salt.",
+        "Spread on toast and top with chili flakes."
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Avocado Toast",
+      "type": "breakfast",
+      "dietary": ["vegan", "vegetarian"],
+      "calories": 320,
+      "rating": 4.5,
+      "description": "Creamy avocado on sourdough with a hint of lemon.",
+      "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=400",
+      "ingredients": ["2 slices sourdough", "1 avocado", "lemon juice", "salt", "chili flakes"],
+      "steps": [
+        "Toast the bread until golden.",
+        "Mash avocado with lemon juice and salt.",
+        "Spread on toast and top with chili flakes."
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Avocado Toast",
+      "type": "breakfast",
+      "dietary": ["vegan", "vegetarian"],
+      "calories": 320,
+      "rating": 4.5,
+      "description": "Creamy avocado on sourdough with a hint of lemon.",
+      "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=400",
+      "ingredients": ["2 slices sourdough", "1 avocado", "lemon juice", "salt", "chili flakes"],
+      "steps": [
+        "Toast the bread until golden.",
+        "Mash avocado with lemon juice and salt.",
+        "Spread on toast and top with chili flakes."
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Avocado Toast",
+      "type": "breakfast",
+      "dietary": ["vegan", "vegetarian"],
+      "calories": 320,
+      "rating": 4.5,
+      "description": "Creamy avocado on sourdough with a hint of lemon.",
+      "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=400",
+      "ingredients": ["2 slices sourdough", "1 avocado", "lemon juice", "salt", "chili flakes"],
+      "steps": [
+        "Toast the bread until golden.",
+        "Mash avocado with lemon juice and salt.",
+        "Spread on toast and top with chili flakes."
+      ]
+    }
+  ],
+  "mealPlan": [],
+  "groceryList": []
+}
