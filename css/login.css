@@ -17,6 +17,24 @@ body {
 }
 
 
+
+.main-wrapper {
+    width: 450px; 
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.form-slider {
+    display: flex;
+    width: 900px; 
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.form-slider.show-register {
+    transform: translateX(-450px);
+}
+
 .container {
     background: #fff;
     width: 100%;
@@ -226,3 +244,37 @@ body {
     object-fit: contain; 
     display: block;
 }
+
+
+
+
+
+
+.register-mode {
+    position: relative;
+    padding-top: 60px; 
+}
+
+.register-tab {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #38bf99;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 0 0 15px 15px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.terms-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #444;
+    margin: 15px 0;
+}
+
+

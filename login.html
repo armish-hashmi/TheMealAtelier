@@ -8,73 +8,192 @@
         <link rel="stylesheet" href="css/login.css">
     </head>
     <body>
-        <div class="container">
-            <div class="form-container">
-                    
-                <div class="form-header">
-                    <p>Please enter your details</p>
-                    <h1>Welcome Back</h1>
-                </div>
-                <form class="form-box">
-                    <div class="input-group">
+        <div class="main-wrapper">
+            <div class="form-slider" id="formSlider">
+                
+                <div class="container" id="loginContainer">
+                    <div class="form-container">
+                        <div class="form-header">
+                            <p>Please enter your details</p>
+                            <h1>Welcome Back</h1>
+                        </div>
+                       
+                        <form class="form-box" id="loginForm">
+                            <div class="input-group">
 
-                        <input type="email" id="email" class="input-field" placeholder="" required>
-                        <label for="email" class="floating-label">Email address</label>
-                    </div>
-                    <div class="input-group">
-                      
-                        <input type="password" id="password" class="input-field" placeholder="" required>
+                                <input type="email" id="email" class="input-field" placeholder="" required>
+                                <label for="email" class="floating-label">Email address</label>
+                            </div>
+                            <div class="input-group">
+                            
+                                <input type="password" id="password" class="input-field" placeholder="" required>
 
-                        <label for="password" class="floating-label">Password</label>
-                        <div class="eye-icon" onclick="togglePassword()">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                <label for="password" class="floating-label">Password</label>
+                                <div class="eye-icon" onclick="togglePassword('password', this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                </div>
+                            </div>
+                            <div class="input-group checkbox">
+                                <div class="form-col rememberme">
+                                    <input type="checkbox" id="remember-me-checkbox" class="checkbox-field">
+                                    <label for="remember-me-checkbox">Remember me</label>
+                                </div>
+                                <div class="form-col">
+                                <a href="#" class="form-link">Forgot password?</a>
+                                </div>
+                            </div>
+                            <button type="submit" class="form-btn form-btn-submit">Sign In</button>
+                        </form>
+                        <div class="form-divider">
+                            <p>Or</p>
                         </div>
-                    </div>
-                    <div class="input-group checkbox">
-                        <div class="form-col rememberme">
-                            <input type="checkbox" id="remember-me-checkbox" class="checkbox-field">
-                            <label for="remember-me-checkbox">Remember me</label>
+                        <div class="form-bottom">
+                            <div class="form-socials">
+                                <button class="form-btn form-btn-social">
+                                    <img src="images/login/google-logo-vector-format-white-background-illustration-407571048.webp" class="btn-icon" alt="social-icon">
+                                </button>
+                                <button class="form-btn form-btn-social">
+                                    <img src="images/login/hd-blue-and-white-square-facebook-fb-logo-70175169479235560lh86s7jg.png" class="btn-icon" alt="social-icon">
+                                </button>
+                                <button class="form-btn form-btn-social">
+                                    <img src="images/login/black-apple-logo-apple-logo-png-clipart.jpg" class="btn-icon" alt="social-icon">
+                                </button> 
+                            </div>
                         </div>
-                        <div class="form-col">
-                           <a href="#" class="form-link">Forgot password?</a>
+                        <div class="form-bottom">
+                                <p>Don't have an account? <a href="#" class="form-link" id="toSignup">Sign up</a></p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="form-btn form-btn-submit">Sign In</button>
-                </form>
-                <div class="form-divider">
-                    <p>Or</p>
-                </div>
-                <div class="form-bottom">
-                    <div class="form-socials">
-                        <button class="form-btn form-btn-social">
-                            <img src="images/login/google-logo-vector-format-white-background-illustration-407571048.webp" class="btn-icon" alt="social-icon">
-                        </button>
-                        <button class="form-btn form-btn-social">
-                            <img src="images/login/hd-blue-and-white-square-facebook-fb-logo-70175169479235560lh86s7jg.png" class="btn-icon" alt="social-icon">
-                        </button>
-                        <button class="form-btn form-btn-social">
-                            <img src="images/login/black-apple-logo-apple-logo-png-clipart.jpg" class="btn-icon" alt="social-icon">
-                        </button> 
-                    </div>
-                    <p>Don't have an account? <a href="#" class="form-link">Sign up</a></p>
-                </div>
+
+                        <div class="container register-mode" id="registerContainer">
+                            <div class="register-tab">Register</div>
+                            
+                            <div class="form-container">
+                                <form class="form-box"  id="registerForm">
+                                    <div class="input-group">
+                                       <input type="text" id="reg-username" class="input-field" placeholder="" required>
+                                        <label for="reg-username" class="floating-label">User Name</label>
+                                    </div>
+                                    <div class="input-group">
+                                       <input type="email"    id="reg-email"    class="input-field" placeholder="" required>
+                                        <label for="email" class="floating-label">Email address</label>
+                                    </div>
+                                    <div class="input-group">
+                                    <input type="password" id="reg-password" class="input-field" placeholder="" required>
+
+                                        <label for="password" class="floating-label">Password</label>
+                                        <div class="eye-icon" onclick="togglePassword('reg-password', this)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="terms-group">
+                                        <input type="checkbox" id="terms">
+                                        <label for="terms">I agree to the terms & condition</label>
+                                    </div>
+
+                                    <button type="submit" class="form-btn form-btn-submit">Sign Up</button>
+                                </form>
+                                <div class="form-divider">
+                                    <p>Or</p>
+                                </div>
+                                <div class="form-bottom">
+                                    <div class="form-socials">
+                                        <button class="form-btn form-btn-social">
+                                            <img src="images/login/google-logo-vector-format-white-background-illustration-407571048.webp" class="btn-icon" alt="social-icon">
+                                        </button>
+                                        <button class="form-btn form-btn-social">
+                                            <img src="images/login/hd-blue-and-white-square-facebook-fb-logo-70175169479235560lh86s7jg.png" class="btn-icon" alt="social-icon">
+                                        </button>
+                                        <button class="form-btn form-btn-social">
+                                            <img src="images/login/black-apple-logo-apple-logo-png-clipart.jpg" class="btn-icon" alt="social-icon">
+                                        </button> 
+                                    </div>
+                                </div>
+
+                                <div class="form-bottom">
+                                    <p>Already have an account? <a href="#" class="form-link" id="toLogin">Login</a></p>
+                               
+                                </div>
+                            </div>
+                        </div>
+                 </div>
+            </div>
+
             </div>
         </div>
+         
 
         <script>
-           function togglePassword() {
-                const passwordInput = document.getElementById("password");
-                const eyeIcon = document.querySelector(".eye-icon"); 
+        
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const slider = document.getElementById('formSlider');
+                const toSignup = document.getElementById('toSignup');
+                const toLogin = document.getElementById('toLogin');
+
+                // Slide to Register
+                toSignup.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    slider.classList.add('show-register');
+                });
+
+                // Slide back to Login
+                toLogin.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    slider.classList.remove('show-register');
+                });
+            });
+
+            function togglePassword(inputId, iconEl) {
+                const passwordInput = document.getElementById(inputId);
 
                 if (passwordInput.type === "password") {
                     passwordInput.type = "text";
-                
-                    eyeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg>`;
+                    iconEl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" 
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off">
+                        <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 
+                        a10.747 10.747 0 0 1-1.444 2.49"/>
+                        <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/>
+                        <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 
+                        a10.75 10.75 0 0 1 4.446-5.143"/>
+                        <path d="m2 2 20 20"/></svg>`;
                 } else {
                     passwordInput.type = "password";
-                    eyeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>`;
+                    iconEl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" 
+                        stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye">
+                        <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 
+                        .696 10.75 10.75 0 0 1-19.876 0"/>
+                        <circle cx="12" cy="12" r="3"/></svg>`;
+
                 }
             }
+
+            document.getElementById("loginForm").addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                let email = document.getElementById("email").value;
+                let password = document.getElementById("password").value;
+                
+                if (email && password) {
+                    window.location.href = "index.html";
+                }
+            });
+
+            document.getElementById("registerForm").addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                let username = document.getElementById("reg-username").value;
+                let email = document.getElementById("reg-email").value;
+                let password = document.getElementById("reg-password").value;
+
+                if (username && email && password) {
+                    window.location.href = "index.html";
+                }
+            });
         </script>
     </body>
 </html>
