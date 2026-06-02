@@ -1,0 +1,86 @@
+.admin-sidebar {
+    background: #2c3e50;   /* visually distinct from user sidebar */
+    color: white;
+    width: 220px;
+    min-height: 100vh;
+    padding: 24px 16px;
+    position: fixed;
+}
+
+.admin-sidebar .brand-name { color: white; font-size: 16px; }
+.admin-sidebar .avatar { background: #e74c3c; }
+.admin-sidebar ul li { color: #ccc; padding: 10px 8px; cursor: pointer; border-radius: 8px; }
+.admin-sidebar ul li.active-menu { background: #3d5166; color: white; }
+
+.admin-badge {
+    background: #e74c3c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 24px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+}
+
+.stat-label { font-size: 12px; color: #999; margin-bottom: 6px; }
+.stat-value { font-size: 22px; font-weight: 500; }
+
+#adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+#adminTable th {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 2px solid #eee;
+    color: #999;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#adminTable td {
+    padding: 12px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+#adminTable button {
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 12px;
+    margin-right: 6px;
+}
+
+.delete-btn { border-color: #ffcccc !important; color: #e05 !important; }
+.delete-btn:hover { background: #fff0f0; }
+
+#editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+#editForm input, #editForm textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+}

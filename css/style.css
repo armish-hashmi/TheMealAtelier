@@ -295,3 +295,8 @@ p{
     outline: 2px solid #64ab87;
     border: none;
 }
+.filter-tags span.active-filter {
+    background: #64ab87;
+    color: white;
+    border-color: #64ab87;
+}

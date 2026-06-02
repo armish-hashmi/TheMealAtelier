@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — The Meal Atelier</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="admin-sidebar">
+        <div class="logo-section">
+            <div class="avatar admin-avatar">A</div>
+            <h1 class="brand-name">Admin Panel</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="active-menu">All Recipes</li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="top-bar">
+            <h2>Recipe Management</h2>
+            <span class="admin-badge">Admin</span>
+        </div>
+
+        <!-- Stats -->
+        <section class="stats-row" id="statsRow"></section>
+
+        <!-- Edit Form -->
+        <section id="editSection" style="display:none; padding:24px;">
+            <h3>Edit Recipe</h3>
+            <form id="editForm" novalidate>
+                <input type="hidden" id="edit-id">
+                <input type="text"   id="edit-title"       placeholder="Title"       required>
+                <input type="text"   id="edit-description" placeholder="Description" required>
+                <input type="number" id="edit-calories"    placeholder="Calories"    required>
+                <input type="number" id="edit-rating"      placeholder="Rating"      required>
+                <input type="text"   id="edit-ingredients" placeholder="Ingredients (comma separated)">
+                <textarea            id="edit-instructions" placeholder="Instructions"></textarea>
+                <label>
+                    <input type="checkbox" id="edit-hidden"> Hide from users
+                </label>
+                <button type="submit">Save Changes</button>
+                <button type="button" onclick="closeEdit()">Cancel</button>
+            </form>
+        </section>
+
+        <!-- Recipes Table -->
+        <section style="padding:24px;">
+            <table id="adminTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Calories</th>
+                        <th>Rating</th>
+                        <th>Visible</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="adminTableBody"></tbody>
+            </table>
+            <p id="adminError" style="color:red;display:none;">
+                Could not load recipes. Is JSON Server running?
+            </p>
+        </section>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

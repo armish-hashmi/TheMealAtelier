@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner — The Meal Atelier</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/planner.css">
+</head>
+<body>
+    <div class="left-box">
+        <div class="logo-section">
+            <div class="avatar">A</div>
+            <h1 class="brand-name">The Meal Atelier</h1>
+        </div>
+        <div class="menu-group">
+            <p class="menu-label">DISCOVERY</p>
+            <ul>
+                <li onclick="window.location.href='home.html'">Explore Recipes</li>
+                <li class="active-menu">Meal Calendar</li>
+                <li onclick="window.location.href='grocery.html'">Shopping List</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="header-text"><h2>Weekly Planner</h2></div>
+            <div class="week-nav">
+                <button id="prevWeek">&#8592;</button>
+                <span id="weekLabel"></span>
+                <button id="nextWeek">&#8594;</button>
+            </div>
+        </div>
+
+        <div class="planner-grid" id="plannerGrid"></div>
+
+        <div id="mealPickerModal" class="modal" style="display:none;">
+            <div class="modal-content" style="width:400px;">
+                <span class="close-btn" onclick="closeMealPicker()">&times;</span>
+                <h2 class="atelier-title">Pick a meal</h2>
+                <input type="text" id="mealSearch" placeholder="Search recipes..." 
+                    style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd;margin-bottom:1rem;">
+                <div id="mealPickerList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/recipes.js"></script>
+    <script src="js/planner.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+.planner-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    padding: 24px;
+}
+
+.day-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 12px;
+    min-height: 160px;
+}
+
+.day-card h4 {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.day-date {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.planned-recipe {
+    border: 1.5px dashed #ddd;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 12px;
+    color: #bbb;
+    text-align: center;
+    cursor: pointer;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.planned-recipe.has-meal {
+    border-style: solid;
+    border-color: #64ab87;
+    background: #f0faf5;
+    color: #333;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 8px 10px;
+}
+
+.planned-recipe .remove-meal {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.planned-recipe .remove-meal:hover { color: #e05; }
+
+.week-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.week-nav button {
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+#mealPickerList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.meal-option {
+    padding: 10px 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.15s;
+}
+
+.meal-option:hover { background: #f0faf5; border-color: #64ab87; }

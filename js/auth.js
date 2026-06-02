@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let password = document.getElementById("password").value;
                 
                 if (email && password) {
-                    window.location.href = "home.html";
+                    window.location.href = "index.html";
                 }
             });
 
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let password = document.getElementById("reg-password").value;
 
                 if (username && email && password) {
-                    window.location.href = "home.html";
+                    window.location.href = "index.html";
                 }
             });
 

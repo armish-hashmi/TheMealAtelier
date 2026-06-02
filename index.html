@@ -51,7 +51,56 @@
             </div>
         </div>
    
-        <main id="container"></main>
+        <main id="container">
+            <section id="add-recipe-section" style="padding: 24px;">
+    <h2 class="atelier-title">Add a Recipe</h2>
+    <form id="addRecipeForm" novalidate>
+
+        <div class="input-group">
+            <input type="text" id="r-title" placeholder="Recipe title" required>
+            <span class="error-msg" id="err-title"></span>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="r-description" placeholder="Short description" required>
+            <span class="error-msg" id="err-desc"></span>
+        </div>
+
+        <div class="input-group">
+            <input type="number" id="r-calories" placeholder="Calories (kcal)" required min="1">
+            <span class="error-msg" id="err-cal"></span>
+        </div>
+
+        <div class="input-group">
+            <input type="number" id="r-rating" placeholder="Rating (1-5)" required min="1" max="5" step="0.1">
+            <span class="error-msg" id="err-rating"></span>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="r-ingredients" placeholder="Ingredients (comma separated)" required>
+            <span class="error-msg" id="err-ing"></span>
+        </div>
+
+        <div class="input-group">
+            <textarea id="r-instructions" placeholder="Instructions" required></textarea>
+            <span class="error-msg" id="err-inst"></span>
+        </div>
+
+        <div class="input-group">
+            <select id="r-category" multiple>
+                <option value="Vegan">Vegan</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Gluten-Free">Gluten-Free</option>
+                <option value="Dairy-Free">Dairy-Free</option>
+                <option value="Low-Carb">Low-Carb</option>
+            </select>
+        </div>
+
+        <button type="submit" class="form-btn form-btn-submit">Add Recipe</button>
+        <span class="error-msg" id="err-form"></span>
+    </form>
+</section>
+        </main>
 
 
         <div id="authModal" class="modal">
