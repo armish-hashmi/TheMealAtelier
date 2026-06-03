@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery List — The Meal Atelier</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/grocery.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery List — The Meal Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/grocery.css">
 </head>
 <body>
-    <div class="left-box">
-        <div class="logo-section">
-            <div class="avatar">A</div>
-            <h1 class="brand-name">The Meal Atelier</h1>
-        </div>
-        <div class="menu-group">
-            <p class="menu-label">DISCOVERY</p>
-            <ul>
-                <li onclick="window.location.href='home.html'">Explore Recipes</li>
-                <li onclick="window.location.href='planner.html'">Meal Calendar</li>
-                <li class="active-menu">Shopping List</li>
-            </ul>
-        </div>
+
+  <aside class="left-box">
+    <div class="logo-section">
+      <div class="avatar">A</div>
+      <h1 class="brand-name">The Meal Atelier</h1>
+    </div>
+    <nav>
+      <div class="menu-group">
+        <p class="menu-label">DISCOVERY</p>
+        <ul>
+          <li onclick="window.location.href='index.html'">Explore Recipes</li>
+          <li onclick="window.location.href='planner.html'">Meal Calendar</li>
+          <li class="active-menu">Shopping List</li>
+        </ul>
+      </div>
+    </nav>
+    <div class="tip-box">
+      <p class="tip-label">ZERO WASTE TIP</p>
+      <p class="tip-text">Buying grains in bulk can reduce your packaging waste by 40%.</p>
+    </div>
+  </aside>
+
+  <div class="main-content">
+    <div class="top-bar">
+      <div class="header-text"><h2>Grocery List</h2></div>
+      <button id="clearChecked" class="btn-clear">Clear checked items</button>
     </div>
 
-    <div class="main-content">
-        <div class="top-bar">
-            <div class="header-text"><h2>Grocery List</h2></div>
-            <button id="clearChecked" class="clear-btn">Clear checked</button>
+    <main>
+      <div class="grocery-layout" id="groceryLayout">
+        <div class="grocery-category">
+          <h3>Produce</h3>
+          <ul id="list-Produce"></ul>
+          <div class="add-row">
+            <input type="text" id="input-Produce" placeholder="Add item...">
+            <button onclick="addItem('Produce')">Add</button>
+          </div>
         </div>
-
-        <div class="grocery-layout" id="groceryLayout">
-            <div class="grocery-category" id="cat-Produce">
-                <h3>Produce</h3>
-                <ul id="list-Produce"></ul>
-                <div class="add-row">
-                    <input type="text" placeholder="Add item..." id="input-Produce">
-                    <button onclick="addItem('Produce')">Add</button>
-                </div>
-            </div>
-            <div class="grocery-category" id="cat-Proteins">
-                <h3>Proteins</h3>
-                <ul id="list-Proteins"></ul>
-                <div class="add-row">
-                    <input type="text" placeholder="Add item..." id="input-Proteins">
-                    <button onclick="addItem('Proteins')">Add</button>
-                </div>
-            </div>
-            <div class="grocery-category" id="cat-Pantry">
-                <h3>Pantry</h3>
-                <ul id="list-Pantry"></ul>
-                <div class="add-row">
-                    <input type="text" placeholder="Add item..." id="input-Pantry">
-                    <button onclick="addItem('Pantry')">Add</button>
-                </div>
-            </div>
-            <div class="grocery-category" id="cat-Dairy">
-                <h3>Dairy & Extras</h3>
-                <ul id="list-Dairy"></ul>
-                <div class="add-row">
-                    <input type="text" placeholder="Add item..." id="input-Dairy">
-                    <button onclick="addItem('Dairy')">Add</button>
-                </div>
-            </div>
+        <div class="grocery-category">
+          <h3>Proteins</h3>
+          <ul id="list-Proteins"></ul>
+          <div class="add-row">
+            <input type="text" id="input-Proteins" placeholder="Add item...">
+            <button onclick="addItem('Proteins')">Add</button>
+          </div>
         </div>
-    </div>
+        <div class="grocery-category">
+          <h3>Pantry</h3>
+          <ul id="list-Pantry"></ul>
+          <div class="add-row">
+            <input type="text" id="input-Pantry" placeholder="Add item...">
+            <button onclick="addItem('Pantry')">Add</button>
+          </div>
+        </div>
+        <div class="grocery-category">
+          <h3>Dairy &amp; Extras</h3>
+          <ul id="list-Dairy"></ul>
+          <div class="add-row">
+            <input type="text" id="input-Dairy" placeholder="Add item...">
+            <button onclick="addItem('Dairy')">Add</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 
-    <script src="js/grocery.js"></script>
+  <script src="js/grocery.js"></script>
 </body>
 </html>

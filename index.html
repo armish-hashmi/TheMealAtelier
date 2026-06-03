@@ -1,150 +1,141 @@
- 
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <html lang="en">
-    <title>The Meal Atelier</title>
-    <link rel="stylesheet" href="css/style.css">
-   
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Meal Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="left-box">
-        <div class="logo-section">
-            <div class="avatar">A</div>
-            <h1 class="brand-name">The Meal Atelier</h1>
-        </div>
 
-        <div class="menu-group">
-            <p class="menu-label">DISCOVERY</p>
-            <ul>
-                <li onclick="showSection('recepies')">Explore Recipes</li>
-                <li onclick="showSection('planner')">Meal Calendar</li>
-                <li onclick="showSection('grocery')">Shopping List</li>
-            </ul>
-        </div>
-
-        <div class="menu-group">
-            <p class="menu-label">DIETARY FILTERS</p>
-            <div class="filter-tags">
-                <span>Vegan</span>
-                <span>Vegetarian</span>
-                <span>Gluten-Free</span>
-                <span>Dairy-Free</span>
-                <span>Low-Carb</span>
-            </div>
-        </div>
-
-        <div class="tip-box">
-            <p class="tip-label">ZERO WASTE TIP</p>
-            <p class="tip-text">Buying grains in bulk can reduce your packaging waste by 40%.</p>
-        </div>
+  <aside class="left-box">
+    <div class="logo-section">
+      <div class="avatar">A</div>
+      <h1 class="brand-name">The Meal Atelier</h1>
     </div>
 
-    <div class="main-content">
-        <section id="explorer-view"></section>
-        <div class="top-bar">
-            <div class="header-text">
-                <h2>Seasonal Selections</h2>
-            </div>
-            <div class="search-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" placeholder="Search flavors...">
-            </div>
-        </div>
-   
-        <main id="container">
-            <section id="add-recipe-section" style="padding: 24px;">
-    <h2 class="atelier-title">Add a Recipe</h2>
-    <form id="addRecipeForm" novalidate>
+    <nav>
+      <div class="menu-group">
+        <p class="menu-label">DISCOVERY</p>
+        <ul>
+          <li class="active-menu">Explore Recipes</li>
+          <li onclick="window.location.href='planner.html'">Meal Calendar</li>
+          <li onclick="window.location.href='grocery.html'">Shopping List</li>
+        </ul>
+      </div>
 
-        <div class="input-group">
-            <input type="text" id="r-title" placeholder="Recipe title" required>
+      <div class="menu-group">
+        <p class="menu-label">DIETARY FILTERS</p>
+        <div class="filter-tags">
+          <span class="filter-tag active-filter" data-filter="All">All</span>
+          <span class="filter-tag" data-filter="Vegan">Vegan</span>
+          <span class="filter-tag" data-filter="Vegetarian">Vegetarian</span>
+          <span class="filter-tag" data-filter="Gluten-Free">Gluten-Free</span>
+          <span class="filter-tag" data-filter="Dairy-Free">Dairy-Free</span>
+          <span class="filter-tag" data-filter="Low-Carb">Low-Carb</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="tip-box">
+      <p class="tip-label">ZERO WASTE TIP</p>
+      <p class="tip-text">Buying grains in bulk can reduce your packaging waste by 40%.</p>
+    </div>
+  </aside>
+
+  <div class="main-content">
+
+    <div class="top-bar">
+      <div class="header-text">
+        <h2>Seasonal Selections</h2>
+      </div>
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search flavors...">
+      </div>
+    </div>
+
+    <main id="container" aria-live="polite"></main>
+
+    <section class="add-recipe-section" id="addRecipeSection">
+      <h2 class="section-title">Add a Recipe</h2>
+      <form id="addRecipeForm" novalidate>
+
+        <div class="form-row">
+          <div class="input-group">
+            <label for="r-title">Recipe Title <span class="required">*</span></label>
+            <input type="text" id="r-title" placeholder="e.g. Avocado Toast">
             <span class="error-msg" id="err-title"></span>
+          </div>
+          <div class="input-group">
+            <label for="r-calories">Calories (kcal) <span class="required">*</span></label>
+            <input type="number" id="r-calories" placeholder="e.g. 320" min="1">
+            <span class="error-msg" id="err-calories"></span>
+          </div>
         </div>
 
-        <div class="input-group">
-            <input type="text" id="r-description" placeholder="Short description" required>
-            <span class="error-msg" id="err-desc"></span>
-        </div>
-
-        <div class="input-group">
-            <input type="number" id="r-calories" placeholder="Calories (kcal)" required min="1">
-            <span class="error-msg" id="err-cal"></span>
-        </div>
-
-        <div class="input-group">
-            <input type="number" id="r-rating" placeholder="Rating (1-5)" required min="1" max="5" step="0.1">
+        <div class="form-row">
+          <div class="input-group">
+            <label for="r-rating">Rating (1–5) <span class="required">*</span></label>
+            <input type="number" id="r-rating" placeholder="e.g. 4.5" min="1" max="5" step="0.1">
             <span class="error-msg" id="err-rating"></span>
-        </div>
-
-        <div class="input-group">
-            <input type="text" id="r-ingredients" placeholder="Ingredients (comma separated)" required>
-            <span class="error-msg" id="err-ing"></span>
-        </div>
-
-        <div class="input-group">
-            <textarea id="r-instructions" placeholder="Instructions" required></textarea>
-            <span class="error-msg" id="err-inst"></span>
-        </div>
-
-        <div class="input-group">
+          </div>
+          <div class="input-group">
+            <label for="r-category">Dietary Category <span class="required">*</span></label>
             <select id="r-category" multiple>
-                <option value="Vegan">Vegan</option>
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="Gluten-Free">Gluten-Free</option>
-                <option value="Dairy-Free">Dairy-Free</option>
-                <option value="Low-Carb">Low-Carb</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Gluten-Free">Gluten-Free</option>
+              <option value="Dairy-Free">Dairy-Free</option>
+              <option value="Low-Carb">Low-Carb</option>
             </select>
+            <span class="error-msg" id="err-category"></span>
+          </div>
         </div>
 
-        <button type="submit" class="form-btn form-btn-submit">Add Recipe</button>
-        <span class="error-msg" id="err-form"></span>
-    </form>
-</section>
-        </main>
-
-
-        <div id="authModal" class="modal">
-            <div class="modal-content" style="width: 350px;">
-                <span class="close-btn" onclick="closeModal('authModal')">&times;</span>
-                <h2 id="authTitle" style="color:#64ab87">Sign In</h2>
-                <form id="authForm" style="display:flex; flex-direction:column; gap:10px; margin-top:20px;">
-                    <input type="text" name="login_id" placeholder="Username or Email" required style="padding:10px; border-radius:10px; border:1px solid #ddd;">
-                    <input type="text" id="signupUser" name="username" placeholder="Full Username" style="display:none; padding:10px; border-radius:10px; border:1px solid #ddd;">
-                    <input type="password" name="password" placeholder="Password" required style="padding:10px; border-radius:10px; border:1px solid #ddd;">
-                    <button type="submit" style="background:#64ab87; color:white; border:none; padding:10px; border-radius:10px; cursor:pointer;">Continue</button>
-                </form>
-                <p onclick="toggleAuthMode()" id="authSwitch" style="font-size:0.8rem; margin-top:15px; cursor:pointer; color:#64ab87;">New here? Create an account.</p>
-            </div>
+        <div class="input-group full-width">
+          <label for="r-description">Description <span class="required">*</span></label>
+          <input type="text" id="r-description" placeholder="Brief description of the dish">
+          <span class="error-msg" id="err-description"></span>
         </div>
-        <section id="planner-view" style="display:none; padding: 40px;">
-            <h2 class="atelier-title">Weekly Planner</h2>
-            <div class="planner-grid">
-                <div class="day-card" id="monday"><h4>Monday</h4><div class="planned-recipe"></div></div>
-                <div class="day-card" id="tuesday"><h4>Tuesday</h4><div class="planned-recipe"></div></div>
-                <div class="day-card" id="wednesday"><h4>Wednesday</h4><div class="planned-recipe"></div></div>
-                <!-- ... add other days ... -->
-            </div>
-        </section>
 
-        <!-- Grocery List Section -->
-        <section id="grocery-view" style="display:none; padding: 40px;">
-            <h2 class="atelier-title">Grocery List</h2>
-            <ul id="master-grocery-list"></ul>
-        </section>
+        <div class="input-group full-width">
+          <label for="r-ingredients">Ingredients <span class="required">*</span> <small>(comma separated)</small></label>
+          <input type="text" id="r-ingredients" placeholder="e.g. Eggs, Spinach, Cheese">
+          <span class="error-msg" id="err-ingredients"></span>
+        </div>
+
+        <div class="input-group full-width">
+          <label for="r-instructions">Instructions <span class="required">*</span></label>
+          <textarea id="r-instructions" rows="3" placeholder="Step by step cooking instructions..."></textarea>
+          <span class="error-msg" id="err-instructions"></span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-submit" id="submitBtn">Add Recipe</button>
+          <span class="error-msg" id="err-form"></span>
+        </div>
+
+      </form>
+    </section>
+
+  </div>
+
+  <!-- Recipe Detail Modal -->
+  <div id="recipeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('recipeModal')" aria-label="Close">&times;</button>
+      <h2 id="modalTitle" class="atelier-title"></h2>
+      <div class="modal-body">
+        <div id="ingredientsList"></div>
+        <p id="modalInstructions"></p>
+      </div>
     </div>
-    <div id="recipeModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('recipeModal')">&times;</span>
-            <h2 id="modalTitle" class="atelier-title"></h2>
-            <div class="modal-body">
-                <div id="ingredientsList"></div>
-                <p id="modalInstructions"></p>
-            </div>
-        </div>
-    </div>
-    
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
- <script src="js/recipes.js"></script>
- <script src="js/auth.js "></script>
-
 </html>

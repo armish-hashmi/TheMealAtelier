@@ -1,73 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin — The Meal Atelier</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/admin.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — The Meal Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
 </head>
-<body>
-    <div class="admin-sidebar">
-        <div class="logo-section">
-            <div class="avatar admin-avatar">A</div>
-            <h1 class="brand-name">Admin Panel</h1>
-        </div>
-        <nav>
-            <ul>
-                <li class="active-menu">All Recipes</li>
-            </ul>
-        </nav>
+<body class="admin-body">
+
+  <aside class="admin-sidebar">
+    <div class="logo-section">
+      <div class="avatar admin-avatar">A</div>
+      <div>
+        <h1 class="brand-name">The Meal Atelier</h1>
+        <span class="admin-badge">Admin Panel</span>
+      </div>
     </div>
+    <nav>
+      <ul>
+        <li class="active-menu" onclick="window.location.href='admin.html'">
+          <span>&#9881;</span> Recipe Management
+        </li>
+        <li onclick="window.location.href='index.html'">
+          <span>&#8617;</span> Back to User Panel
+        </li>
+      </ul>
+    </nav>
+  </aside>
 
-    <div class="main-content">
-        <div class="top-bar">
-            <h2>Recipe Management</h2>
-            <span class="admin-badge">Admin</span>
+  <div class="admin-main">
+
+    <header class="admin-topbar">
+      <h2>Recipe Management</h2>
+      <span class="admin-label">ADMIN</span>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats-section" aria-label="Summary statistics">
+      <div class="stats-row" id="statsRow">
+        <div class="stat-card"><p class="stat-label">Total Recipes</p><p class="stat-value" id="stat-total">—</p></div>
+        <div class="stat-card"><p class="stat-label">Visible to Users</p><p class="stat-value" id="stat-visible">—</p></div>
+        <div class="stat-card"><p class="stat-label">Hidden Recipes</p><p class="stat-value" id="stat-hidden">—</p></div>
+        <div class="stat-card"><p class="stat-label">Avg Calories</p><p class="stat-value" id="stat-avgcal">—</p></div>
+        <div class="stat-card"><p class="stat-label">Avg Rating</p><p class="stat-value" id="stat-avgrating">—</p></div>
+      </div>
+    </section>
+
+    <!-- Edit Form (hidden by default) -->
+    <section id="editSection" class="edit-section" style="display:none;" aria-label="Edit recipe form">
+      <h3>Edit Recipe</h3>
+      <form id="editForm" novalidate>
+        <input type="hidden" id="edit-id">
+
+        <div class="form-row">
+          <div class="input-group">
+            <label for="edit-title">Title <span class="required">*</span></label>
+            <input type="text" id="edit-title" required>
+            <span class="error-msg" id="edit-err-title"></span>
+          </div>
+          <div class="input-group">
+            <label for="edit-calories">Calories <span class="required">*</span></label>
+            <input type="number" id="edit-calories" required min="1">
+            <span class="error-msg" id="edit-err-calories"></span>
+          </div>
         </div>
 
-        <!-- Stats -->
-        <section class="stats-row" id="statsRow"></section>
+        <div class="form-row">
+          <div class="input-group">
+            <label for="edit-rating">Rating (1–5) <span class="required">*</span></label>
+            <input type="number" id="edit-rating" required min="1" max="5" step="0.1">
+            <span class="error-msg" id="edit-err-rating"></span>
+          </div>
+          <div class="input-group">
+            <label for="edit-category">Category</label>
+            <select id="edit-category" multiple>
+              <option value="Vegan">Vegan</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Gluten-Free">Gluten-Free</option>
+              <option value="Dairy-Free">Dairy-Free</option>
+              <option value="Low-Carb">Low-Carb</option>
+            </select>
+          </div>
+        </div>
 
-        <!-- Edit Form -->
-        <section id="editSection" style="display:none; padding:24px;">
-            <h3>Edit Recipe</h3>
-            <form id="editForm" novalidate>
-                <input type="hidden" id="edit-id">
-                <input type="text"   id="edit-title"       placeholder="Title"       required>
-                <input type="text"   id="edit-description" placeholder="Description" required>
-                <input type="number" id="edit-calories"    placeholder="Calories"    required>
-                <input type="number" id="edit-rating"      placeholder="Rating"      required>
-                <input type="text"   id="edit-ingredients" placeholder="Ingredients (comma separated)">
-                <textarea            id="edit-instructions" placeholder="Instructions"></textarea>
-                <label>
-                    <input type="checkbox" id="edit-hidden"> Hide from users
-                </label>
-                <button type="submit">Save Changes</button>
-                <button type="button" onclick="closeEdit()">Cancel</button>
-            </form>
-        </section>
+        <div class="input-group full-width">
+          <label for="edit-description">Description</label>
+          <input type="text" id="edit-description">
+        </div>
 
-        <!-- Recipes Table -->
-        <section style="padding:24px;">
-            <table id="adminTable">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Calories</th>
-                        <th>Rating</th>
-                        <th>Visible</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="adminTableBody"></tbody>
-            </table>
-            <p id="adminError" style="color:red;display:none;">
-                Could not load recipes. Is JSON Server running?
-            </p>
-        </section>
-    </div>
+        <div class="input-group full-width">
+          <label for="edit-ingredients">Ingredients <small>(comma separated)</small></label>
+          <input type="text" id="edit-ingredients">
+        </div>
 
-    <script src="js/admin.js"></script>
+        <div class="input-group full-width">
+          <label for="edit-instructions">Instructions</label>
+          <textarea id="edit-instructions" rows="3"></textarea>
+        </div>
+
+        <div class="input-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="edit-hidden">
+            Hide from users
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Save Changes</button>
+          <button type="button" class="btn-cancel" onclick="closeEdit()">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Recipes Table -->
+    <section class="table-section" aria-label="All recipes">
+      <div class="table-header-row">
+        <h3>All Recipes</h3>
+        <p id="adminStatus" class="status-msg"></p>
+      </div>
+      <div class="table-wrapper">
+        <table id="adminTable" aria-label="Recipes management table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Calories</th>
+              <th>Rating</th>
+              <th>Category</th>
+              <th>Visibility</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/admin.js"></script>
 </body>
 </html>
