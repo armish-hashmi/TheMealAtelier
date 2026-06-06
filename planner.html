@@ -31,25 +31,36 @@
   </aside>
 
   <div class="main-content">
+
     <div class="top-bar">
-      <div class="header-text"><h2>Weekly Meal Planner</h2></div>
-      <div class="week-nav">
-        <button id="prevWeek" aria-label="Previous week">&#8592;</button>
-        <span id="weekLabel"></span>
-        <button id="nextWeek" aria-label="Next week">&#8594;</button>
+      <div class="header-text">
+        <h2>Monthly Meal Planner</h2>
+      </div>
+      <div class="month-nav">
+        <button id="prevMonth" aria-label="Previous month">&#8592;</button>
+        <span id="monthLabel"></span>
+        <button id="nextMonth" aria-label="Next month">&#8594;</button>
       </div>
     </div>
 
+    <!-- Day-of-week header -->
+    <div class="calendar-dow-header">
+      <div>Sun</div><div>Mon</div><div>Tue</div>
+      <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>
+
     <main>
-      <div class="planner-grid" id="plannerGrid"></div>
+      <div class="calendar-grid" id="calendarGrid"></div>
     </main>
+
   </div>
 
   <!-- Meal Picker Modal -->
   <div id="mealPickerModal" class="modal" role="dialog" aria-modal="true" aria-label="Pick a meal">
-    <div class="modal-content">
+    <div class="modal-content picker-modal-content">
       <button class="close-btn" onclick="closeMealPicker()" aria-label="Close">&times;</button>
-      <h2 class="atelier-title">Pick a Meal</h2>
+      <h2 class="atelier-title" id="pickerTitle">Pick a Meal</h2>
+      <p id="pickerSubtitle" class="picker-subtitle"></p>
       <input type="text" id="mealSearch" placeholder="Search recipes..." autocomplete="off">
       <div id="mealPickerList"></div>
     </div>

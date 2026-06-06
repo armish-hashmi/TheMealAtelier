@@ -1,447 +1,773 @@
 {
-    "recipes": [
-        {
-            "id": 1,
-            "title": "Vanilla Chia Seed Pudding",
-            "description": "Overnight chia soaked in almond milk with berries",
-            "image": "images/vanilla-chia-pudding.jpg",
-            "rating":4.9,
-            "calories": 120,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                "Mixed greens",
-                "Cherry tomatoes",
-                "Cucumber",
-                "Red onion",
-                "Vinaigrette dressing"
-            ],
-            "instructions": "Wash and dry all vegetables. Toss greens with tomatoes, cucumber, and onion. Drizzle with vinaigrette and serve immediately.",
-            "hidden": false },
-        {
-            "id": 2,
-            "title": "Spinach & Mushroom Scramble",
-            "description": "Tofu or egg scramble with sautéed greens.",
-            "image": "/images/mushroom-spinach-scrambled-eggs.webp",
-            "rating": 4.7,
-            "calories": 380,
-            "category": ["Vegetarian", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                "Pulled lamb",
-                "Cumin",
-                "Chili powder",
-                "Tortillas",
-                "Pickled onions",
-                "Fresh cilantro"
-            ],
-            "instructions": "Season lamb with cumin and chili. Slow cook for 4 hours until tender. Shred and serve in warm tortillas with pickled onions.",
-            "hidden": false},
-        {
-            "id": 3,
-            "title": "Flaxseed Power Porridge",
-            "description": "A \"no-oat\" meal using ground flax, hemp, and cinnamon.",
-            "image": "images/chocolate-flaxseed-porridge.jpg",
-            "rating": 4.5,
-            "calories": 450,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                "6 eggs",
-                "Sausage",
-                "Cheddar cheese",
-                "Bell peppers",
-                "Onion",
-                "Salt and pepper"
-            ],
-            "instructions": "Preheat oven to 375°F. Cook sausage and vegetables. Whisk eggs and combine all ingredients. Bake for 35 minutes until golden.",
-            "hidden": false
-        },
-        {
-            "id": 4,
-            "title": "Avocado Toast on Sweet Potato",
-            "description": "Toasted sweet potato slices topped with mashed avocado.",
-            "image": "images/sweet-potato-toast.jpg",
-            "rating": 4.8,
-            "calories": 280,
-            "category": ["Vegan", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                "Wonton wrappers",
-                "Minced chicken",
-                "Fresh ginger",
-                "Garlic",
-                "Soy sauce",
-                "Sesame oil"
-            ],
-            "instructions": "Mix chicken with ginger, garlic and sesame oil. Place filling in wonton wrappers and fold. Boil for 5 minutes and serve with soy sauce.",
-            "hidden": false
-        },
-        {
-            "id": 5,
-            "title": "Almond Flour Pancakes",
-            "description": "Fluffy low-carb pancakes using almond meal and stevia.",
-            "image": "/images/almond-flour-pancakes.jpeg",
-            "rating": 4.6,
-            "calories": 520,
-            "category": ["Vegetarian", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                "Chicken breasts",
-                "Heavy cream",
-                "Parmesan cheese",
-                "Garlic cloves",
-                "Butter",
-                "Italian seasoning"
-            ],
-            "instructions": "Sear chicken in butter until golden. Remove and sauté garlic. Add cream and parmesan, simmer until thick. Return chicken and coat in sauce.",
-            "hidden": false
-        },
-        {
-            "id": 6,
-            "title": "Coconut Yogurt Parfait",
-            "description": "Probiotic coconut yogurt with crushed walnuts and seeds.",
-            "image": "images/coconut-yogurt-parfait.jpg",
-            "rating": 4.9,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": ""
-        },
-        {
-            "id": 7,
-            "title": "Green Garden Smoothie",
-            "description": "Kale, cucumber, green apple, and pea protein.",
-            "image": "images/Garden-green-smoothie.webp",
-            "rating": 4.4,
-            "calories": 200,
-            "category": ["Vegan", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         
-        {
-            "id": 8,
-            "title": "Baked Shakshuka",
-            "description": "Poached eggs in a spicy tomato and bell pepper sauce.",
-            "image": "images/Baked-Shakshuka.jpg",
-            "rating": 4.9,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 9,
-            "title": "Peanut Butter Celery Boats",
-            "description": "Organic PB on celery stalks with hemp seeds.",
-            "image": "images/PeanutButterCeleryBoats.webp",
-            "rating": 4.2,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 10,
-            "title": "Tofu Breakfast Burrito Bowl",
-            "description": "Crumbled tofu, black beans, salsa, and radishes.",
-            "image": "images/TofuBreakfastBurritoBowl.webp",
-            "rating": 4.7,
-            "calories": 200,
-            "category": ["Vegan", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 11,
-            "title": "Mediterranean Quinoa Salad",
-            "description": "Quinoa with cucumber, olives, parsley, and lemon.",
-            "image": "images/MediterraneanQuinoaSalad.webp",
-            "rating": 4.8,
-            "calories": 200,
-            "category": ["Vegan",  "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 12,
-            "title": "Rainbow Cabbage Slaw",
-            "description": "Shredded purple cabbage with ginger-tahini dressing.",
-            "image": "images/RainbowCabbageSlaw.webp",
-            "rating": 4.6,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 13,
-            "title": "Zucchini Noodle Pesto",
-            "description": "Spiralized zucchini tossed in homemade basil oil pesto.",
-            "image": "images/ZucchiniNoodlePesto.jpg",
-            "rating": 4.7,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 14,
-            "title": "Cauliflower Rice Buddha Bowl",
-            "description": "Roasted chickpeas and greens over riced cauliflower.",
-            "image": "images/CauliflowerRiceBuddhaBowl.jpeg",
-            "rating": 4.5,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 15,
-            "title": "Lentil & Spinach Soup",
-            "description": "Hearty brown lentils simmered with garlic and cumin.",
-            "image": "images/Lentil&SpinachSoup.webp",
-            "rating": 4.9,
-            "calories": 200,
-            "category": ["Vegan", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 16,
-            "title": "Walnut-Meat Lettuce Wraps",
-            "description": "Romaine leaves stuffed with seasoned crushed walnuts.",
-            "image": "images/Walnut-MeatLettuceWraps.webp",
-            "rating": 4.3,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 17,
-            "title": "Stuffed Bell Peppers",
-            "description": "Peppers filled with riced cauliflower and black beans.",
-            "image": "images/Stuffed-Peppers.jpg",
-            "rating": 4.7,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 18,
-            "title": "Arugula & Roasted Beet Salad",
-            "description": "Peppery arugula with earthy beets and toasted pecans.",
-            "image": "images/Arugula&RoastedBeetSalad.jpg",
-            "rating": 4.8,
-            "calories": 200,
-            "category": ["Vegan",  "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-         {
-            "id": 19,
-            "title": "Chickpea Tuna Salad",
-            "description": "Smashed chickpeas with vegan mayo, celery, and dill.",
-            "image": "images/ChickpeaTunaSalad.jpg",
-            "rating": 4.6,
-            "calories": 200,
-            "category": ["Vegan","Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 20,
-            "title": "Grilled Halloumi Salad",
-            "description": "Seared halloumi over mixed baby field greens.",
-            "image": "images/Grilled-Halloumi-Salad.jpeg",
-            "rating": 4.9,
-            "calories": 200,
-            "category": ["Vegan",  "Gluten-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 21,
-            "title": "Thai Green Curry",
-            "description": "Mixed vegetables in spicy coconut milk sauce.",
-            "image": "images/thai-green-curry.jpg",
-            "rating": 4.9,
-            "calories": 200,
-            "category": ["Vegan", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 22,
-            "title": "Portobello Mushroom Steaks",
-            "description": "Balsamic glazed mushrooms with steamed asparagus.",
-            "image": "images/portobello-mushroom-steaks-3.jpg",
-            "rating": 4.7,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 23,
-            "title": "Spaghetti Squash Marinara",
-            "description": "Roasted squash strands with chunky tomato sauce.",
-            "image": "images/SpaghettiSquashMarinara.webp",
-            "rating": 4.6,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 24,
-            "title": "Eggplant Rollatini",
-            "description": "Grilled eggplant slices rolled with almond ricotta.",
-            "image": "images/EggplantRollatini.jpeg",
-            "rating": 4.8,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 25,
-            "title": "Tempeh Stir-Fry",
-            "description": "Crispy tempeh with bok choy and tamari (GF soy sauce).",
-            "image": "images/TempehStir-Fry.jpg",
-            "rating": 4.5,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 26,
-            "title": "Lemon Herb Roasted Tofu",
-            "description": "Firm tofu slabs roasted with rosemary and lemon zest.",
-            "image": "images/Lemon-Herb-Grilled-Tofu.jpg",
-            "rating": 4.4,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 27,
-            "title": "Sweet Potato & Black Bean Chili",
-            "description": "Smoky chili with chunks of sweet potato and cocoa.",
-            "image": "images/SweetPotato&BlackBeanChili.jpeg",
-            "rating": 4.9,
-            "calories": 200,
-            "category": ["Vegan", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 28,
-            "title": "Coconut Crusted Cauliflower",
-            "description": "Cauliflower florets baked with shredded coconut.",
-            "image": "images/CoconutCrustedCauliflower.jpg",
-            "rating": 4.7,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 29,
-            "title": "Butternut Squash Steaks",
-            "description": "Thick-cut squash roasted with sage and olive oil.",
-            "image": "images/ButternutSquashSteaks.avif",
-            "rating": 4.8,
-            "calories": 200,
-            "category": ["Vegan", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        },
-        {
-            "id": 30,
-            "title": "Ratatouille Nicoise",
-            "description": "Classic stewed eggplant, tomato, zucchini, and onion.",
-            "image": "images/RatatouilleNicoise.jpg",
-            "rating": 4.9,
-            "calories": 200,
-            "category": ["Vegan", "Low-Carb", "Gluten-Free", "Dairy-Free"],
-            "ingredients": [
-                
-            ],
-            "instructions": "",
-            "hidden": false
-        }
-
-    ]
-}
+  "recipes": [
+    {
+      "id": "1",
+      "title": "Vanilla Chia Seed Pudding",
+      "description": "Overnight chia soaked in almond milk with berries",
+      "image": "images/vanilla-chia-pudding.jpg",
+      "rating": 4.9,
+      "calories": 120,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Chia seeds",
+        "Milk",
+        "Vanilla extract",
+        "Cinnamon"
+      ],
+      "instructions": "To make the chia pudding, whisk the plant milk, chia seeds, vanilla, and cinnamon in a large bowl, ensuring all seeds are fully submerged. Cover the mixture and refrigerate it for at least 30 minutes, though two hours or overnight is ideal for the best texture. When you're ready to eat, stir your portioned serving, add your favorite toppings, and store any leftovers in an airtight container for up to five days.",
+      "hidden": false
+    },
+    {
+      "id": "2",
+      "title": "Spinach & Mushroom Scramble",
+      "description": "Tofu or egg scramble with sautéed greens.",
+      "image": "/images/mushroom-spinach-scrambled-eggs.webp",
+      "rating": 4.7,
+      "calories": 380,
+      "category": [
+        "Vegetarian",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Olive oil",
+        "Onions",
+        "Mushrooms",
+        "Baby spinach",
+        "Eggs",
+        "Water",
+        "Salt",
+        "Black pepper",
+        "Cheese"
+      ],
+      "instructions": [
+        "In a small bowl, whisk eggs, egg white, 1 tablespoon water, 1/8 tsp salt and pepper until blended.",
+        "In a medium nonstick skillet, heat oil over medium heat.",
+        "Add onions and cook until tender and golden, 3 to 4 minutes.",
+        "Add the mushrooms and cook and stir 3-4 minutes or until tender. Add spinach; cook and stir until wilted.",
+        "Add egg mixture; cook and stir just until eggs are thickened and no liquid egg remains. If you want to add cheese, add it with the eggs."
+      ],
+      "hidden": false
+    },
+    {
+      "id": "3",
+      "title": "Flaxseed Powder Porridge",
+      "description": "A \"no-oat\" meal using ground flax, hemp, and cinnamon.",
+      "image": "images/chocolate-flaxseed-porridge.jpg",
+      "rating": 4.5,
+      "calories": 450,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Vanilla extract",
+        "Cinnamon",
+        "Chocolate chips",
+        "Maple Syrup",
+        "Fruits",
+        "Yogurt",
+        "Fruit jam",
+        "Sweetener"
+      ],
+      "instructions": [
+        "Measure your nuts and flaxseed meal (or whole flaxseeds) and add to a blender or food processor. Run about 30 seconds until a coarse meal/flour is reached.Add your flaxseed meal base to a pot, add milk, cinnamon, and sweetener of choice and simmer over low heat for 3-5 minutes. This will cook and thicken quickly! Dont walk away.Adjust the consistency as needed depending on your taste- I use 3/4 cup but add more liquid to reach the consistency you desire. You can also use water instead of milk!"
+      ],
+      "hidden": false
+    },
+    {
+      "id": "4",
+      "title": "Avocado Toast on Sweet Potato",
+      "description": "Toasted sweet potato slices topped with mashed avocado.",
+      "image": "images/sweet-potato-toast.jpg",
+      "rating": 4.8,
+      "calories": 280,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Sweet potato",
+        "Avocado",
+        "Oil",
+        "Salt",
+        "Microgreens"
+      ],
+      "instructions": "Preheat oven to 400 degrees. Carefully slice sweet potatoes lengthwise into ⅓ inch slices. Heat 1-2 tbsp avocado oil or other neutral oil on a baking sheet in the oven for about 2 minutes until very hot.Carefully remove baking sheet from the oven and place sweet potato slices down in a single layer on the hot oil. Return sweet potato slices to the oven and bake for 15-20 minutes, flipping halfway through until crisp on the outside and fork tender on the inside. Let sweet potato slices cool slightly then top with avocado, microgreens, a drizzle of olive oil and flaky salt. Or any toppings you like. Serve immediately. Store cooked, un-topped sweet potato slices in an airtight container in the refrigerator. Reheat in the toaster oven or on a baking sheet in the oven.",
+      "hidden": false
+    },
+    {
+      "id": "5",
+      "title": "Almond Flour Pancakes",
+      "description": "Fluffy low-carb pancakes using almond meal and stevia.",
+      "image": "/images/almond-flour-pancakes.jpeg",
+      "rating": 4.6,
+      "calories": 520,
+      "category": [
+        "Vegetarian",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Almond flour",
+        "Baking powder",
+        "Sea salt",
+        "Almond milk",
+        "Eggs",
+        "Maple Syrup",
+        "Vanilla extract",
+        "Olive oil"
+      ],
+      "instructions": "In a medium bowl, whisk together the spooned and leveled almond flour, baking powder, and salt. In a small bowl, whisk together the almond milk, eggs, maple syrup, and vanilla. Pour the wet ingredients into the bowl with the dry ingredients and stir. If your batter is very thick, stir in more almond milk until it resembles the photos above. If it's too thin, sprinkle in a touch more almond flour. (See photo in the blog post for batter consistency). Heat a non-stick skillet over medium-low heat. Brush the pan with a little olive oil and use a ¼-cup measuring cup to pour the batter onto the pan. (Note: these are more delicate than regular flour pancakes so it's important to make them small). Cook the pancakes for 1 to 2 minutes per side, turning the heat to low as needed so that the middles cook without burning the outsides. I usually turn my heat lower after each batch as my pan starts to hold residual heat. Almond flour pancakes darken a little quicker than pancakes that use regular flour.Serve with maple syrup.",
+      "hidden": false
+    },
+    {
+      "id": "6",
+      "title": "Coconut Yogurt Parfait",
+      "description": "Probiotic coconut yogurt with crushed walnuts and seeds.",
+      "image": "images/coconut-yogurt-parfait.jpg",
+      "rating": 4.9,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Coconut yogurt",
+        "Detox granola",
+        "Peaches",
+        "Charries"
+      ],
+      "instructions": "Divide 1 cup coconut yogurt between two bowls. Top with detox granola, freshly sliced peaches, and cherries"
+    },
+    {
+      "id": "7",
+      "title": "Green Garden Smoothie",
+      "description": "Kale, cucumber, green apple, and pea protein.",
+      "image": "images/Garden-green-smoothie.webp",
+      "rating": 4.4,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Orange juice",
+        "Greek yogurt",
+        "Baby spinach",
+        "Mint leaves",
+        "Cucumber",
+        "Mango",
+        "Banana",
+        "Honey"
+      ],
+      "instructions": "Place the juice, yogurt, spinach, mint, cucumber, mango, and honey as desired in a blender, and blend until well combined.Pour into individual glasses and serve with a straw. Yield: Two (1 cup) servings",
+      "hidden": false
+    },
+    {
+      "id": "8",
+      "title": "Baked Shakshuka",
+      "description": "Poached eggs in a spicy tomato and bell pepper sauce.",
+      "image": "images/Baked-Shakshuka.jpg",
+      "rating": 4.9,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Olive oil",
+        "Onions",
+        "Garlic",
+        "Bell peper",
+        "Tomato",
+        "Broth",
+        "Seasoning",
+        "Salt",
+        "Eggs",
+        "Cilantro"
+      ],
+      "instructions": "Preheat oven to 180C/350F (if intending to bake them). Heat oil in a medium size cast iron skillet over medium high heat. Add garlic and onion, cook for 2 minutes until onion is translucent. Add capsicum, cook for 1 minute. Add diced tomato, cook for 2 minutes until broken down and it becomes a bit pasty (see video). Add canned tomatoes, tomato paste, broth, paprika, cumin, salt and pepper. Mix to combine well. Lower stove to medium low and simmer for 5 minutes until just thickened enough to make indentations (don’t want dry sludge, needs to still be saucy). Make indentations in the mixture and carefully crack the eggs in. Leave to cook for 1 minute until edges of whites are set (Note 1).Transfer to oven and bake for 7 to 12 minutes until whites are just set but yolks are still runny (or to your taste). OR cover with lid and steam on stove for 3 minutes (runny yolks), or just simmer them without a lid. Remove from oven/stove and serve immediately, scattered with the coriander or parsley. Serve with crusty bread, or pita bread.",
+      "hidden": false
+    },
+    {
+      "id": "9",
+      "title": "Peanut Butter Celery Boats",
+      "description": "Organic PB on celery stalks with hemp seeds.",
+      "image": "images/PeanutButterCeleryBoats.webp",
+      "rating": 4.2,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "peanut butter",
+        "celery"
+      ],
+      "instructions": "Clean the celery and cut into 4-inch lengths. (This is about three pieces per stalk).Spread peanut butter as to fill the furrow of the celery.Some people like the crunchy peanut butter.Serve to kids with an ice cold glass of 2% milk.",
+      "hidden": false
+    },
+    {
+      "id": "10",
+      "title": "Tofu Breakfast Burrito Bowl",
+      "description": "Crumbled tofu, black beans, salsa, and radishes.",
+      "image": "images/TofuBreakfastBurritoBowl.webp",
+      "rating": 4.7,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Breakfast"
+      ],
+      "ingredients": [
+        "Olive oil",
+        "Tofu",
+        "Salt",
+        "Black pepper",
+        "Seasoning",
+        "Jalapeno",
+        "Garlic",
+        "Tomato",
+        "Cilantro",
+        "Lemon juice",
+        "black beans",
+        "Avocado",
+        "potatoes",
+        "hot sauce"
+      ],
+      "instructions": "Preheat a large, heavy skillet over medium-high heat. Add 2 tablespoons oil. Break tofu apart over skillet into bite-size pieces, sprinkle with salt and pepper, then cook, stirring frequently with a thin metal spatula, until liquid cooks out and tofu browns, about 10 minutes. (If you notice liquid collecting in pan, increase heat to evaporate water.) Be sure to get under the tofu when you stir, scraping the bottom of the pan where the good, crispy stuff is and keeping it from sticking. Add onion and garlic powders, turmeric, juice, and remaining tablespoon oil and toss to coat. Cook 5 minutes more. Preheat a heavy-bottomed saucepan over medium-high heat. Add oil. Cook onion and jalapenos with a pinch of salt, stirring, until translucent, about 5 minutes, Add garlic and cook, stirring, until fragrant, about 30 seconds. Add tomatoes, cumin, and remaining salt, and cook, stirring, until tomatoes become saucy, about 5 minutes. Add cilantro and lemon juice. Let cilantro wilt in. Add beans and heat through, stirring occasionally, about 2 minutes. Taste for salt and seasoning. Spoon some hash browns into each bowl, followed by a scoop of beans and a scoop of scramble. Top with avocado, a squeeze of fresh lemon juice, and a sprinkle of cilantro. Serve with hot sauc",
+      "hidden": false
+    },
+    {
+      "id": "11",
+      "title": "Mediterranean Quinoa Salad",
+      "description": "Quinoa with cucumber, olives, parsley, and lemon.",
+      "image": "images/MediterraneanQuinoaSalad.webp",
+      "rating": 4.8,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [
+        "Quinoa",
+        "Lemon",
+        "Oregano",
+        "Salt",
+        "Bell peper",
+        "Olive oil",
+        "Scallions",
+        "Bell peper",
+        "olives",
+        "Cucumber",
+        "Cheese"
+      ],
+      "instructions": "Cook the quinoa. Rinse the quinoa well under cold running water. Cook according to package instructions. Make the dressing. While the quinoa cooks, add the juice and zest of the lemon to a serving bowl, along with the oregano, salt, and pepper. Whisk in the olive oil. Taste and adjust the seasoning to your liking. Dress the quinoa. Once the quinoa is tender and has finished cooking, add it to the bowl with the dressing. Stir to coat and allow the quinoa to absorb the lemon dressing. Let it cool completely before adding the vegetables. While the quinoa cools, chop the vegetables, adding them to the quinoa as you go. Trim and slice the scallions, chop the peppers, and run your knife across the olives to break them into smaller pieces. Slice the cucumber in half, then into quarters, and slice. Add the bowl and stir. Finish with feta and serve. You can dress it up by garnishing it with fresh oregano leaves, but that's entirely optional.",
+      "hidden": false
+    },
+    {
+      "id": "12",
+      "title": "Rainbow Cabbage Slaw",
+      "description": "Shredded purple cabbage with ginger-tahini dressing.",
+      "image": "images/RainbowCabbageSlaw.webp",
+      "rating": 4.6,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [
+        "Lemon juice",
+        "Olive oil",
+        "Vinegar",
+        "Mustard",
+        "Maple Syrup",
+        "Dill",
+        "Basil",
+        "Salt",
+        "Black pepper",
+        "Green Cabbage",
+        "Red Cabbage",
+        "Bell peper",
+        "Tomato",
+        "Carrots",
+        "olives",
+        "Cilantro"
+      ],
+      "instructions": "Make dressing: To a small bowl, add lemon juice, olive oil, apple cider vinegar, dijon mustard, and mustard. Whisk until smooth. Whisk in dill, basil, salt, and pepper (to taste). Set aside. Make salad: To a large bowl, add green cabbage, red cabbage, bell peppers, tomatoes, carrots, and olives. Drizzle over the vinaigrette. Toss until well coated. Add dill and cilantro. Taste and adjust seasonings, if needed.",
+      "hidden": false
+    },
+    {
+      "id": "13",
+      "title": "Zucchini Noodle Pesto",
+      "description": "Spiralized zucchini tossed in homemade basil oil pesto.",
+      "image": "images/ZucchiniNoodlePesto.jpg",
+      "rating": 4.7,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [
+        "Zucchini",
+        "Basil",
+        "Garlic",
+        "Olive oil",
+        "Lemon juice",
+        "Cheese",
+        "Black pepper",
+        "Tomato"
+      ],
+      "instructions": "Use a julienne peeler or mandoline to slice the zucchini into noodles. Set aside. Combine the basil and garlic in a food processor and pulse until coarsely chopped. Slowly add the olive oil in a constant stream while the food processor is on. Stop the machine and scrape down the sides of the food processor with a rubber spatula. Add the lemon juice and Parmesan cheese. Pulse until blended. Season with salt and pepper. Combine the zucchini noodles and pesto. Toss until zucchini noodles are well coated. Top with tomatoes, if using. Serve at room temperature or chilled. Note-if you want to cook the zucchini noodles, you can. Just add the zucchini pesto noodles to a skillet and sauté them up over medium heat. It only takes a few minutes.",
+      "hidden": false
+    },
+    {
+      "id": "14",
+      "title": "Cauliflower Rice Buddha Bowl",
+      "description": "Roasted chickpeas and greens over riced cauliflower.",
+      "image": "images/CauliflowerRiceBuddhaBowl.jpeg",
+      "rating": 4.5,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [
+        "Olive oil",
+        "Garlic",
+        "Tahini",
+        "Lemon juice",
+        "Tandoori Masala",
+        "Chickpeas",
+        "Salt",
+        "Black pepper",
+        "Baby spinach",
+        "Carrots"
+      ],
+      "instructions": "On a baking sheet, combine chickpeas with tandoori seasoning. Mix with oil and season with a pinch salt and pepper. Bake for 10 minutes at 400°F. While the chickpeas are baking, it's time to prepare your cauliflower rice. In a pan heat olive oil for the Tahini Sauce. When hot, add minced garlic and fry for 1 minute. Transfer to a bowl, mix with tahini, lemon juice, water (every tahini is different some brands a thicker, some are thinner). Start with 2 tablespoon water until you reach the desired consistency, season with a pinch of salt and pepper. Heat a sauce pan with a touch of olive or canola oil (or use vegetable broth for oil free cooking). Fry the garlic and carrots for 3 minutes, then add the spinach. Sauté this for about 1 minute. Assemble your bowl: You can just mix all the things together and sprinkle some sauce over it, enjoy!",
+      "hidden": false
+    },
+    {
+      "id": "15",
+      "title": "Lentil & Spinach Soup",
+      "description": "Hearty brown lentils simmered with garlic and cumin.",
+      "image": "images/Lentil&SpinachSoup.webp",
+      "rating": 4.9,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [
+        "Olive oil",
+        "Onions",
+        "Garlic",
+        "Salt & black pepper",
+        "Coriander",
+        "cumin",
+        "red pepper",
+        "sumac",
+        "Mint leaves",
+        "sugar",
+        "Flour",
+        "Broth",
+        "Baby spinach",
+        "Lemon juice",
+        "parsley"
+      ],
+      "instructions": "In a large ceramic or cast iron pot, heat 2 tbsp olive oil. Add the chopped onions and sautee until golden brown. Add the garlic, all the spices, dried mint, sugar and flour. Cook for about 2 minutes on medium heat stirring regularly. Now add the broth and water. Raise the heat to high and bring the liquid to a rolling boil; add the frozen spinach and the lentils. Cook for 5 minutes on high heat then reduce the heat to medium-low. Cover and cook for 20 minutes or until the lentils are fully cooked to tender. (Partway through cooking, check the liquid levels, and if you need to add a little bit of hot water.) Once the lentils are fully cooked, stir in the lime juice and chopped parsley. Remove from the heat and let sit covered for 5 minutes or so. Serve hot with pita bread or your favorite rustic Italian bread.",
+      "hidden": false
+    },
+    {
+      "id": "16",
+      "title": "Walnut-Meat Lettuce Wraps",
+      "description": "Romaine leaves stuffed with seasoned crushed walnuts.",
+      "image": "images/Walnut-MeatLettuceWraps.webp",
+      "rating": 4.3,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [
+        "Iceberg lettuce",
+        "Walnuts",
+        "Mushrooms",
+        "Scallion",
+        "Garlic",
+        "ginger",
+        "Soy sauce",
+        "hoisin sauce",
+        "Rice vinegar",
+        "Maple Syrup",
+        "Sesame oil",
+        "sesame seeds"
+      ],
+      "instructions": "Cut off the end (stem) of the lettuce and gently pull apart the leaves of the lettuce and set aside. In a medium bowl, soak the walnuts (completely covered in water) and set aside for 20 minutes. Then drain and squeeze out excess moisture (I recommend a mesh colander).In a large food processor, pulse together the walnuts, mushrooms, garlic, ginger and white parts of the scallion. Transfer to a large mixing bowl. Stir together the wet ingredients to fully combine. Scoop the walnut mixture into the lettuce cups (leaves) and top with optional toppings. Serve as is for a tasty snack or pair with brown rice for a meal!",
+      "hidden": false
+    },
+    {
+      "id": "17",
+      "title": "Stuffed Bell Peppers",
+      "description": "Peppers filled with riced cauliflower and black beans.",
+      "image": "images/Stuffed-Peppers.jpg",
+      "rating": 4.7,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "18",
+      "title": "Arugula & Roasted Beet Salad",
+      "description": "Peppery arugula with earthy beets and toasted pecans.",
+      "image": "images/Arugula&RoastedBeetSalad.jpg",
+      "rating": 4.8,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "19",
+      "title": "Chickpea Tuna Salad",
+      "description": "Smashed chickpeas with vegan mayo, celery, and dill.",
+      "image": "images/ChickpeaTunaSalad.jpg",
+      "rating": 4.6,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Lunch"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "20",
+      "title": "Grilled Halloumi Salad",
+      "description": "Seared halloumi over mixed baby field greens.",
+      "image": "images/Grilled-Halloumi-Salad.jpeg",
+      "rating": 4.9,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Lunch"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "21",
+      "title": "Thai Green Curry",
+      "description": "Mixed vegetables in spicy coconut milk sauce.",
+      "image": "images/thai-green-curry.jpg",
+      "rating": 4.9,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "22",
+      "title": "Portobello Mushroom Steaks",
+      "description": "Balsamic glazed mushrooms with steamed asparagus.",
+      "image": "images/portobello-mushroom-steaks-3.jpg",
+      "rating": 4.7,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "23",
+      "title": "Spaghetti Squash Marinara",
+      "description": "Roasted squash strands with chunky tomato sauce.",
+      "image": "images/SpaghettiSquashMarinara.webp",
+      "rating": 4.6,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "24",
+      "title": "Eggplant Rollatini",
+      "description": "Grilled eggplant slices rolled with almond ricotta.",
+      "image": "images/EggplantRollatini.jpeg",
+      "rating": 4.8,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "25",
+      "title": "Tempeh Stir-Fry",
+      "description": "Crispy tempeh with bok choy and tamari (GF soy sauce).",
+      "image": "images/TempehStir-Fry.jpg",
+      "rating": 4.5,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "26",
+      "title": "Lemon Herb Roasted Tofu",
+      "description": "Firm tofu slabs roasted with rosemary and lemon zest.",
+      "image": "images/Lemon-Herb-Grilled-Tofu.jpg",
+      "rating": 4.4,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "27",
+      "title": "Sweet Potato & Black Bean Chili",
+      "description": "Smoky chili with chunks of sweet potato and cocoa.",
+      "image": "images/SweetPotato&BlackBeanChili.jpeg",
+      "rating": 4.9,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "28",
+      "title": "Coconut Crusted Cauliflower",
+      "description": "Cauliflower florets baked with shredded coconut.",
+      "image": "images/CoconutCrustedCauliflower.jpg",
+      "rating": 4.7,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "29",
+      "title": "Butternut Squash Steaks",
+      "description": "Thick-cut squash roasted with sage and olive oil.",
+      "image": "images/ButternutSquashSteaks.avif",
+      "rating": 4.8,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "id": "30",
+      "title": "Ratatouille Nicoise",
+      "description": "Classic stewed eggplant, tomato, zucchini, and onion.",
+      "image": "images/RatatouilleNicoise.jpg",
+      "rating": 4.9,
+      "calories": 200,
+      "category": [
+        "Vegan",
+        "Low-Carb",
+        "Gluten-Free",
+        "Dairy-Free",
+        "Dinner"
+      ],
+      "ingredients": [],
+      "instructions": "",
+      "hidden": false
+    },
+    {
+      "title": "Noodles",
+      "description": "Very bad for health",
+      "calories": 34,
+      "rating": 3.5,
+      "category": [
+        "Gluten-Free"
+      ],
+      "ingredients": [
+        "egg",
+        "cheese"
+      ],
+      "instructions": "ok",
+      "image": "images/Garden-Salad_47-SQ.webp",
+      "hidden": false,
+      "id": "ITiGWDd_9fM"
+    }
+  ],
+  "planner": [
+    {
+      "dayKey": "2026-05-31",
+      "recipeId": 2,
+      "mealTitle": "Spinach & Mushroom Scramble",
+      "id": "KC7xh3TdVL4"
+    },
+    {
+      "dayKey": "2026-06-01",
+      "recipeId": 3,
+      "mealTitle": "Flaxseed Powder Porridge",
+      "id": "A-wvofEMTD4"
+    },
+    {
+      "dayKey": "2026-06-02",
+      "mealType": "Breakfast",
+      "recipeId": 2,
+      "mealTitle": "Spinach & Mushroom Scramble",
+      "id": "k3ZRRjq0YyU"
+    },
+    {
+      "dayKey": "2026-06-02",
+      "mealType": "Dinner",
+      "recipeId": 24,
+      "mealTitle": "Eggplant Rollatini",
+      "id": "8Yz70REY0LY"
+    },
+    {
+      "dayKey": "2026-06-08",
+      "mealType": "Breakfast",
+      "recipeId": 3,
+      "mealTitle": "Flaxseed Powder Porridge",
+      "id": "uHZtgfGl4oU"
+    },
+    {
+      "dayKey": "2026-06-15",
+      "mealType": "Dinner",
+      "recipeId": 27,
+      "mealTitle": "Sweet Potato & Black Bean Chili",
+      "id": "V8WJFHD5ucw"
+    },
+    {
+      "dayKey": "2026-06-07",
+      "mealType": "Lunch",
+      "recipeId": 12,
+      "mealTitle": "Rainbow Cabbage Slaw",
+      "id": "thPwm8-9VUg"
+    }
+  ],
+  "grocery": [
+  { "id": 1, "text": "Mixed greens",    "done": false },
+  { "id": 2, "text": "Cherry tomatoes", "done": false },
+  { "id": 3, "text": "Garlic cloves",   "done": false },
+  { "id": 4, "text": "Chicken breasts", "done": false },
+  { "id": 5, "text": "Basmati rice",    "done": false },
+  { "id": 6, "text": "Soy sauce",       "done": false },
+  { "id": 7, "text": "Heavy cream",     "done": false },
+  { "id": 8, "text": "Parmesan cheese", "done": false }
+]

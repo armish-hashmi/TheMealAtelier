@@ -1,98 +1,171 @@
-.week-nav {
+/* ===== MONTH NAV ===== */
+.month-nav {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 13px;
-  color: #555;
+  gap: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
 }
 
-.week-nav button {
+.month-nav button {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 5px 12px;
-  cursor: pointer;
+  padding: 5px 14px;
   font-size: 16px;
-  line-height: 1;
-  transition: background 0.15s;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
 }
 
-.week-nav button:hover { background: #f0faf5; border-color: #64ab87; }
+.month-nav button:hover { background: #f0faf5; border-color: #64ab87; }
 
-.planner-grid {
+/* ===== DAY OF WEEK HEADER ===== */
+.calendar-dow-header {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 12px;
-  padding: 24px 28px;
+  gap: 6px;
+  padding: 12px 20px 0;
+  text-align: center;
 }
 
-.day-card {
-  background: #fff;
-  border: 1px solid #eee;
-  border-radius: 14px;
-  padding: 12px;
-  min-height: 160px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.day-card h4 {
-  font-size: 10px;
+.calendar-dow-header div {
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #bbb;
+  padding: 6px 0;
 }
 
-.day-date {
-  font-size: 22px;
+/* ===== CALENDAR GRID ===== */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  padding: 8px 20px 28px;
+}
+
+/* Empty filler cells for offset */
+.calendar-filler {
+  min-height: 130px;
+  border-radius: 12px;
+  background: transparent;
+}
+
+/* ===== DAY CARD ===== */
+.day-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 8px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: box-shadow 0.15s;
+}
+
+.day-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+
+.day-card.day-today {
+  border-color: #64ab87;
+  background: #f9fffc;
+}
+
+.day-number {
+  font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: #999;
+  margin-bottom: 2px;
 }
 
-.day-today .day-date {
+.day-card.day-today .day-number {
   color: #64ab87;
 }
 
-.planned-recipe {
-  flex: 1;
-  border: 1.5px dashed #ddd;
-  border-radius: 10px;
-  padding: 8px;
-  font-size: 11px;
-  color: #ccc;
-  text-align: center;
-  cursor: pointer;
+/* ===== MEAL SLOTS ===== */
+.meal-slot {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: border-color 0.15s, background 0.15s;
+  gap: 4px;
+  border-radius: 7px;
+  padding: 4px 6px;
+  cursor: pointer;
+  min-height: 26px;
+  transition: background 0.15s;
+  position: relative;
 }
 
-.planned-recipe:hover { border-color: #64ab87; color: #64ab87; background: #f9fffe; }
+/* Empty slot */
+.meal-slot.empty {
+  border: 1px dashed #e0e0e0;
+  color: #ccc;
+  font-size: 10px;
+  justify-content: center;
+}
 
-.planned-recipe.has-meal {
-  border-style: solid;
-  border-color: #c3e8d8;
-  background: #f0faf5;
-  color: #333;
-  justify-content: space-between;
-  text-align: left;
-  gap: 4px;
-  font-size: 11px;
+.meal-slot.empty:hover { border-color: #64ab87; color: #64ab87; background: #f9fffc; }
+
+/* Filled slot */
+.meal-slot.filled {
+  border: 1px solid transparent;
+}
+
+.meal-slot.filled.breakfast { background: #fff8e6; border-color: #fde9a0; }
+.meal-slot.filled.lunch     { background: #e8f8f2; border-color: #b6e8d0; }
+.meal-slot.filled.dinner    { background: #eef0ff; border-color: #c8ccf7; }
+
+.slot-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  width: 14px;
+}
+
+.slot-label.breakfast { color: #e6a817; }
+.slot-label.lunch     { color: #2e9966; }
+.slot-label.dinner    { color: #5058d4; }
+
+.slot-meal-name {
+  font-size: 10px;
+  color: #444;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   font-weight: 500;
 }
 
-.remove-meal {
+.slot-remove {
+  background: none;
+  border: none;
   color: #ccc;
-  cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1;
+  cursor: pointer;
+  padding: 0;
   flex-shrink: 0;
+  display: none;
 }
 
-.remove-meal:hover { color: #e05; }
+.meal-slot.filled:hover .slot-remove { display: block; }
+.slot-remove:hover { color: #e05; }
+
+/* ===== MEAL PICKER MODAL ===== */
+.picker-modal-content {
+  width: 100%;
+  max-width: 480px;
+}
+
+.picker-subtitle {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 12px;
+  margin-top: -8px;
+}
 
 #mealSearch {
   width: 100%;
@@ -102,6 +175,7 @@
   font-size: 13px;
   margin-bottom: 12px;
   outline: none;
+  font-family: inherit;
 }
 
 #mealSearch:focus { border-color: #64ab87; }
@@ -110,7 +184,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  max-height: 320px;
+  max-height: 340px;
   overflow-y: auto;
 }
 
@@ -119,7 +193,6 @@
   border: 1px solid #eee;
   border-radius: 10px;
   cursor: pointer;
-  font-size: 13px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -128,6 +201,35 @@
 
 .meal-option:hover { background: #f0faf5; border-color: #64ab87; }
 
-.meal-cal { color: #aaa; font-size: 11px; }
+.meal-option-title { font-size: 13px; font-weight: 500; }
+.meal-option-meta  { font-size: 11px; color: #aaa; }
 
-.planner-empty { color: #ccc; font-size: 12px; text-align: center; padding: 20px; }
+.planner-empty {
+  text-align: center;
+  color: #ccc;
+  font-size: 13px;
+  padding: 24px;
+}
+
+/* Meal type tab filters inside modal */
+.meal-type-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.meal-type-tab {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  font-size: 12px;
+  cursor: pointer;
+  background: transparent;
+  color: #888;
+  transition: all 0.15s;
+}
+
+.meal-type-tab.active-tab { color: #fff; border-color: transparent; }
+.meal-type-tab.active-tab.breakfast { background: #e6a817; }
+.meal-type-tab.active-tab.lunch     { background: #2e9966; }
+.meal-type-tab.active-tab.dinner    { background: #5058d4; }

@@ -1,6 +1,4 @@
-const GROCERY_API = 'http://localhost:3000/groceryItems';
-
-const CATEGORIES = ['Produce', 'Proteins', 'Pantry', 'Dairy'];
+const GROCERY_API = 'http://localhost:3000/grocery';
 
 /* ===========================
    FETCH ALL ITEMS — GET
@@ -11,57 +9,49 @@ async function loadGrocery() {
     const res = await fetch(GROCERY_API);
     if (!res.ok) throw new Error(`Server error: ${res.status}`);
     const items = await res.json();
-    renderAll(items);
+    renderList(items);
   } catch (err) {
-    CATEGORIES.forEach(cat => {
-      const ul = document.getElementById(`list-${cat}`);
-      if (ul) ul.innerHTML = '<li style="color:#aaa;font-size:12px;padding:8px 0;">Could not load items. Is JSON Server running?</li>';
-    });
+    document.getElementById('grocery-list').innerHTML =
+      '<li class="grocery-empty">Could not load items. Is JSON Server running?</li>';
   }
 }
 
 /* ===========================
-   RENDER ALL ITEMS
+   RENDER LIST
 =========================== */
 
-function renderAll(items) {
-  CATEGORIES.forEach(cat => {
-    const ul = document.getElementById(`list-${cat}`);
-    if (!ul) return;
-    const catItems = items.filter(i => i.category === cat);
+function renderList(items) {
+  const ul = document.getElementById('grocery-list');
 
-    if (catItems.length === 0) {
-      ul.innerHTML = '<li style="color:#ccc;font-size:12px;padding:8px 0;">No items yet.</li>';
-      return;
-    }
+  if (items.length === 0) {
+    ul.innerHTML = '<li class="grocery-empty">Your list is empty. Add some items!</li>';
+    return;
+  }
 
-    ul.innerHTML = catItems.map(item => `
-      <li class="grocery-item">
-        <input type="checkbox" id="item-${item.id}" ${item.done ? 'checked' : ''}
-          onchange="toggleItem(${item.id}, this.checked)">
-        <label for="item-${item.id}" class="${item.done ? 'done' : ''}">${item.text}</label>
-        <button class="delete-item" onclick="deleteItem(${item.id})" aria-label="Delete item">×</button>
-      </li>
-    `).join('');
-  });
+  ul.innerHTML = items.map(item => `
+    <li class="grocery-item">
+      <input type="checkbox" id="item-${item.id}" ${item.done ? 'checked' : ''}
+        onchange="toggleItem(${item.id}, this.checked)">
+      <label for="item-${item.id}" class="${item.done ? 'done' : ''}">${item.text}</label>
+      <button class="delete-item" onclick="deleteItem(${item.id})" aria-label="Delete item">×</button>
+    </li>
+  `).join('');
 }
 
 /* ===========================
    ADD ITEM — POST
 =========================== */
 
-async function addItem(category) {
-  const input = document.getElementById(`input-${category}`);
+async function addItem() {
+  const input = document.getElementById('grocery-input');
   const text = input.value.trim();
   if (!text) return;
-
-  const newItem = { text, category, done: false };
 
   try {
     const res = await fetch(GROCERY_API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newItem)
+      body: JSON.stringify({ text, done: false })
     });
     if (!res.ok) throw new Error(`Server error: ${res.status}`);
     input.value = '';
@@ -104,7 +94,7 @@ async function deleteItem(id) {
 }
 
 /* ===========================
-   CLEAR CHECKED ITEMS
+   CLEAR CHECKED — DELETE all done
 =========================== */
 
 async function clearCheckedItems() {
@@ -127,26 +117,15 @@ async function clearCheckedItems() {
 }
 
 /* ===========================
-   ENTER KEY SUPPORT
-=========================== */
-
-function setupEnterKey() {
-  CATEGORIES.forEach(cat => {
-    const input = document.getElementById(`input-${cat}`);
-    if (input) {
-      input.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') addItem(cat);
-      });
-    }
-  });
-}
-
-/* ===========================
    INIT
 =========================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   loadGrocery();
-  setupEnterKey();
+
+  document.getElementById('grocery-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') addItem();
+  });
+
   document.getElementById('clearChecked').addEventListener('click', clearCheckedItems);
 });

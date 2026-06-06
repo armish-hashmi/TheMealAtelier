@@ -37,37 +37,12 @@
     </div>
 
     <main>
-      <div class="grocery-layout" id="groceryLayout">
-        <div class="grocery-category">
-          <h3>Produce</h3>
-          <ul id="list-Produce"></ul>
+      <div class="grocery-wrapper">
+        <div class="grocery-card">
+          <ul id="grocery-list"></ul>
           <div class="add-row">
-            <input type="text" id="input-Produce" placeholder="Add item...">
-            <button onclick="addItem('Produce')">Add</button>
-          </div>
-        </div>
-        <div class="grocery-category">
-          <h3>Proteins</h3>
-          <ul id="list-Proteins"></ul>
-          <div class="add-row">
-            <input type="text" id="input-Proteins" placeholder="Add item...">
-            <button onclick="addItem('Proteins')">Add</button>
-          </div>
-        </div>
-        <div class="grocery-category">
-          <h3>Pantry</h3>
-          <ul id="list-Pantry"></ul>
-          <div class="add-row">
-            <input type="text" id="input-Pantry" placeholder="Add item...">
-            <button onclick="addItem('Pantry')">Add</button>
-          </div>
-        </div>
-        <div class="grocery-category">
-          <h3>Dairy &amp; Extras</h3>
-          <ul id="list-Dairy"></ul>
-          <div class="add-row">
-            <input type="text" id="input-Dairy" placeholder="Add item...">
-            <button onclick="addItem('Dairy')">Add</button>
+            <input type="text" id="grocery-input" placeholder="Add an item...">
+            <button onclick="addItem()">Add</button>
           </div>
         </div>
       </div>
