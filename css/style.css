@@ -12,7 +12,7 @@ body {
   min-height: 100vh;
 }
 
-/* ===== SIDEBAR ===== */
+
 .left-box {
   width: 220px;
   min-height: 100vh;
@@ -115,7 +115,7 @@ nav ul li.active-menu { background: #f0faf5; color: #64ab87; font-weight: 500; }
 
 .tip-text { font-size: 11px; color: #555; line-height: 1.5; }
 
-/* ===== MAIN CONTENT ===== */
+
 .main-content {
   margin-left: 220px;
   flex: 1;
@@ -124,7 +124,7 @@ nav ul li.active-menu { background: #f0faf5; color: #64ab87; font-weight: 500; }
   min-height: 100vh;
 }
 
-/* ===== TOP BAR ===== */
+
 .top-bar {
   display: flex;
   align-items: center;
@@ -138,6 +138,27 @@ nav ul li.active-menu { background: #f0faf5; color: #64ab87; font-weight: 500; }
 }
 
 .top-bar h2 { font-size: 20px; font-weight: 600; }
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-add-recipe {
+  padding: 8px 18px;
+  background: #64ab87;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.btn-add-recipe:hover { background: #4f9470; }
 
 .search-box {
   display: flex;
@@ -158,7 +179,7 @@ nav ul li.active-menu { background: #f0faf5; color: #64ab87; font-weight: 500; }
   color: #333;
 }
 
-/* ===== RECIPE GRID ===== */
+
 #container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -199,7 +220,7 @@ nav ul li.active-menu { background: #f0faf5; color: #64ab87; font-weight: 500; }
   color: #555;
 }
 
-/* ===== LOADING / ERROR STATES ===== */
+
 .loading-state, .error-state, .empty-state {
   grid-column: 1 / -1;
   text-align: center;
@@ -218,7 +239,7 @@ nav ul li.active-menu { background: #f0faf5; color: #64ab87; font-weight: 500; }
 
 .empty-state { color: #aaa; }
 
-/* ===== ADD RECIPE SECTION ===== */
+
 .add-recipe-section {
   margin: 0 28px 40px;
   background: #fff;
@@ -318,7 +339,7 @@ nav ul li.active-menu { background: #f0faf5; color: #64ab87; font-weight: 500; }
 .btn-submit:hover { background: #4f9470; }
 .btn-submit:disabled { background: #aaa; cursor: not-allowed; }
 
-/* ===== MODAL ===== */
+
 .modal {
   display: none;
   position: fixed;

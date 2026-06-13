@@ -1,24 +1,21 @@
 const RECIPES_API = 'http://localhost:3000/recipes';
 const PLANNER_API = 'http://localhost:3000/planner';
 
-// Meal types shown per day
+
 const MEAL_TYPES = ['Breakfast', 'Lunch', 'Dinner'];
 
 let currentYear  = new Date().getFullYear();
-let currentMonth = new Date().getMonth(); // 0-indexed
+let currentMonth = new Date().getMonth(); 
 
 let allRecipes  = [];
 let plannerData = {};
-// plannerData key format: "2026-06-03_Breakfast"
-// plannerData value: { id, dayKey, mealType, recipeId, mealTitle }
 
-// For the modal
+
+
 let selectedDayKey  = null;
 let selectedMealType = null;
 
-/* ===========================
-   FETCH DATA
-=========================== */
+
 
 async function loadData() {
   try {
@@ -46,32 +43,30 @@ async function loadData() {
   }
 }
 
-/* ===========================
-   BUILD MONTHLY CALENDAR
-=========================== */
+
 
 function buildCalendar() {
   const grid  = document.getElementById('calendarGrid');
   const today = new Date();
 
-  // Update header label
+
   document.getElementById('monthLabel').textContent =
     new Date(currentYear, currentMonth, 1)
       .toLocaleDateString('en', { month: 'long', year: 'numeric' });
 
   grid.innerHTML = '';
 
-  const firstDay  = new Date(currentYear, currentMonth, 1).getDay(); // 0=Sun
+  const firstDay  = new Date(currentYear, currentMonth, 1).getDay(); 
   const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-  // Empty filler cells before first day
+
   for (let i = 0; i < firstDay; i++) {
     const filler = document.createElement('div');
     filler.className = 'calendar-filler';
     grid.appendChild(filler);
   }
 
-  // Day cards
+
   for (let day = 1; day <= daysInMonth; day++) {
     const date    = new Date(currentYear, currentMonth, day);
     const dayKey  = date.toISOString().split('T')[0];
@@ -87,9 +82,7 @@ function buildCalendar() {
   }
 }
 
-/* ===========================
-   BUILD MEAL SLOT HTML
-=========================== */
+
 
 function buildMealSlot(dayKey, mealType) {
   const key   = `${dayKey}_${mealType}`;
@@ -116,15 +109,12 @@ function buildMealSlot(dayKey, mealType) {
     </div>`;
 }
 
-/* ===========================
-   MEAL PICKER MODAL
-=========================== */
+
 
 function openMealPicker(dayKey, mealType) {
   selectedDayKey   = dayKey;
   selectedMealType = mealType;
 
-  // Format date nicely for subtitle
   const date = new Date(dayKey + 'T00:00:00');
   const dateStr = date.toLocaleDateString('en', { weekday: 'long', month: 'long', day: 'numeric' });
 
@@ -145,7 +135,7 @@ function closeMealPicker() {
 function renderMealOptions(query) {
   const list = document.getElementById('mealPickerList');
 
-  // Filter by meal type category AND search query
+  
   const filtered = allRecipes.filter(r => {
     if (r.hidden) return false;
     const matchesType  = r.category && r.category.includes(selectedMealType);
@@ -168,9 +158,7 @@ function renderMealOptions(query) {
   `).join('');
 }
 
-/* ===========================
-   SELECT MEAL — POST / PUT
-=========================== */
+
 
 async function selectMeal(recipeId, mealTitle) {
   const slotKey = `${selectedDayKey}_${selectedMealType}`;
@@ -185,7 +173,7 @@ async function selectMeal(recipeId, mealTitle) {
     const existing = plannerData[slotKey];
 
     if (existing && existing.id) {
-      // Update existing entry — PUT
+     
       const res = await fetch(`${PLANNER_API}/${existing.id}`, {
         method:  'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -195,7 +183,7 @@ async function selectMeal(recipeId, mealTitle) {
         plannerData[slotKey] = await res.json();
       }
     } else {
-      // Create new entry — POST
+      
       const res = await fetch(PLANNER_API, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -206,7 +194,7 @@ async function selectMeal(recipeId, mealTitle) {
       }
     }
   } catch (err) {
-    // Fallback: store locally so UI still updates
+    
     plannerData[slotKey] = { ...entry, id: null };
   }
 
@@ -214,9 +202,6 @@ async function selectMeal(recipeId, mealTitle) {
   buildCalendar();
 }
 
-/* ===========================
-   REMOVE MEAL — DELETE
-=========================== */
 
 async function removeMeal(event, dayKey, mealType) {
   event.stopPropagation();
@@ -231,16 +216,13 @@ async function removeMeal(event, dayKey, mealType) {
       if (!res.ok) throw new Error(`Server error: ${res.status}`);
     }
   } catch (err) {
-    // Silent fail — still remove from UI
+   
   }
 
   delete plannerData[slotKey];
   buildCalendar();
 }
 
-/* ===========================
-   MONTH NAVIGATION
-=========================== */
 
 document.getElementById('prevMonth').addEventListener('click', () => {
   currentMonth--;
@@ -262,8 +244,6 @@ document.getElementById('mealPickerModal').addEventListener('click', (e) => {
   if (e.target === e.currentTarget) closeMealPicker();
 });
 
-/* ===========================
-   INIT
-=========================== */
+
 
 document.addEventListener('DOMContentLoaded', loadData);

@@ -4,9 +4,7 @@ let allRecipes = [];
 let activeFilter = 'All';
 let searchQuery = '';
 
-/* ===========================
-   FETCH & RENDER
-=========================== */
+
 
 async function loadRecipes() {
   showLoading();
@@ -70,9 +68,7 @@ function renderRecipes(recipes) {
   });
 }
 
-/* ===========================
-   LOADING / ERROR STATES
-=========================== */
+
 
 function showLoading() {
   document.getElementById('container').innerHTML =
@@ -84,9 +80,7 @@ function showError(msg) {
     `<p class="error-state">&#9888; ${msg}</p>`;
 }
 
-/* ===========================
-   MODAL
-=========================== */
+
 
 function openRecipeModal(recipe) {
   document.getElementById('modalTitle').textContent = recipe.title;
@@ -109,9 +103,7 @@ function closeModal(id) {
   document.getElementById(id).style.display = 'none';
 }
 
-/* ===========================
-   FILTERS
-=========================== */
+
 
 function setupFilters() {
   document.querySelectorAll('.filter-tag').forEach(tag => {
@@ -124,9 +116,7 @@ function setupFilters() {
   });
 }
 
-/* ===========================
-   SEARCH
-=========================== */
+
 
 function setupSearch() {
   const input = document.getElementById('searchInput');
@@ -141,9 +131,7 @@ function setupSearch() {
   });
 }
 
-/* ===========================
-   FORM VALIDATION
-=========================== */
+
 
 function validateAddForm() {
   let isValid = true;
@@ -204,9 +192,7 @@ function validateAddForm() {
   return isValid;
 }
 
-/* ===========================
-   ADD RECIPE — POST
-=========================== */
+
 
 function setupAddForm() {
   const form = document.getElementById('addRecipeForm');
@@ -225,13 +211,16 @@ function setupAddForm() {
       category:     Array.from(document.getElementById('r-category').selectedOptions).map(o => o.value),
       ingredients:  document.getElementById('r-ingredients').value.split(',').map(s => s.trim()).filter(Boolean),
       instructions: document.getElementById('r-instructions').value.trim(),
-      image:        'images/Garden-Salad_47-SQ.webp',
+      image:        '',
       hidden:       false
     };
 
     const submitBtn = document.getElementById('submitBtn');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Adding...';
+  
+    document.getElementById('addRecipeContainer').style.display = 'none';
+    document.getElementById('toggleFormBtn').textContent = '+ Add Recipe';
 
     try {
       const res = await fetch(API, {
@@ -254,9 +243,21 @@ function setupAddForm() {
   });
 }
 
-/* ===========================
-   CLOSE MODAL ON BACKDROP
-=========================== */
+function toggleAddForm() {
+  const container = document.getElementById('addRecipeContainer');
+  const btn = document.getElementById('toggleFormBtn');
+
+  const isHidden = container.style.display === 'none';
+  container.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? '✕ Close' : '+ Add Recipe';
+
+ 
+  if (isHidden) {
+    container.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+
 
 function setupModalClose() {
   document.getElementById('recipeModal').addEventListener('click', (e) => {
@@ -264,9 +265,7 @@ function setupModalClose() {
   });
 }
 
-/* ===========================
-   INIT
-=========================== */
+
 
 document.addEventListener('DOMContentLoaded', () => {
   loadRecipes();

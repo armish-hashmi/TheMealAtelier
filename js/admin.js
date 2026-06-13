@@ -2,10 +2,6 @@ const API = 'http://localhost:3000/recipes';
 
 let allRecipes = [];
 
-/* ===========================
-   FETCH ALL RECIPES — GET
-=========================== */
-
 async function loadAll() {
   setStatus('Loading...', '');
   try {
@@ -21,9 +17,6 @@ async function loadAll() {
   }
 }
 
-/* ===========================
-   STATS
-=========================== */
 
 function renderStats(recipes) {
   const total     = recipes.length;
@@ -39,17 +32,9 @@ function renderStats(recipes) {
   document.getElementById('stat-avgrating').textContent = '⭐ ' + avgRating;
 }
 
-/* ===========================
-   RENDER TABLE
-=========================== */
 
 function renderTable(recipes) {
   const tbody = document.getElementById('adminTableBody');
-
-  if (recipes.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:40px;color:#ccc;">No recipes found.</td></tr>';
-    return;
-  }
 
   tbody.innerHTML = recipes.map(r => `
     <tr>
@@ -69,60 +54,72 @@ function renderTable(recipes) {
       </td>
       <td>
         <div class="action-btns">
-          <button class="btn-edit" onclick="openEdit(${r.id})">Edit</button>
-          <button class="btn-delete" onclick="deleteRecipe(${r.id}, '${r.title.replace(/'/g, "\\'")}')">Delete</button>
+          <button class="btn-edit"   data-id="${r.id}">Edit</button>
+          <button class="btn-delete" data-id="${r.id}" data-title="${r.title.replace(/"/g, '&quot;')}">Delete</button>
         </div>
       </td>
     </tr>
   `).join('');
 }
 
-/* ===========================
-   OPEN EDIT FORM — GET by ID
-=========================== */
 
-async function openEdit(id) {
+document.getElementById('adminTableBody').addEventListener('click', (e) => {
+  const editBtn   = e.target.closest('.btn-edit');
+  const deleteBtn = e.target.closest('.btn-delete');
+
+  if (editBtn)   openEdit(editBtn.getAttribute('data-id'));
+  if (deleteBtn) deleteRecipe(
+    deleteBtn.getAttribute('data-id'),
+    deleteBtn.getAttribute('data-title')
+  );
+});
+
+
+
+
+async function saveEdit(e) {
+  e.preventDefault();
+  if (!validateEditForm()) return;
+
+  const id = document.getElementById('edit-id').value;
+
   try {
-    const res = await fetch(`${API}/${id}`);
-    if (!res.ok) throw new Error(`Could not fetch recipe ${id}`);
-    const r = await res.json();
+    
+    const getRes = await fetch(`${API}/${id}`);
+    if (!getRes.ok) throw new Error('Could not fetch recipe');
+    const recipe = await getRes.json();
 
-    document.getElementById('edit-id').value           = r.id;
-    document.getElementById('edit-title').value        = r.title;
-    document.getElementById('edit-description').value  = r.description;
-    document.getElementById('edit-calories').value     = r.calories;
-    document.getElementById('edit-rating').value       = r.rating;
-    document.getElementById('edit-ingredients').value  = (r.ingredients || []).join(', ');
-    document.getElementById('edit-instructions').value = r.instructions || '';
-    document.getElementById('edit-hidden').checked     = r.hidden;
 
-    const categorySelect = document.getElementById('edit-category');
-    Array.from(categorySelect.options).forEach(opt => {
-      opt.selected = (r.category || []).includes(opt.value);
+    
+    recipe.title        = document.getElementById('edit-title').value.trim();
+    recipe.description  = document.getElementById('edit-description').value.trim();
+    recipe.calories     = Number(document.getElementById('edit-calories').value);
+    recipe.rating       = parseFloat(document.getElementById('edit-rating').value);
+    recipe.ingredients  = document.getElementById('edit-ingredients').value.split(',').map(s => s.trim()).filter(Boolean);
+    recipe.instructions = document.getElementById('edit-instructions').value.trim();
+    recipe.category     = Array.from(document.getElementById('edit-category').selectedOptions).map(o => o.value);
+    recipe.hidden       = document.getElementById('edit-hidden').checked;   = r.hidden;
+
+   
+    const putRes = await fetch(`${API}/${id}`, {
+      method:  'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(recipe)
     });
+    if (!putRes.ok) throw new Error('PUT failed');
 
-    document.getElementById('editSection').style.display = 'block';
-    document.getElementById('editSection').scrollIntoView({ behavior: 'smooth' });
-    clearEditErrors();
+   
+    closeEdit();
+    setStatus('Recipe updated successfully.', 'success');
+    await loadAll();
+    setTimeout(() => setStatus('', ''), 3000);
+
   } catch (err) {
-    setStatus('Could not load recipe for editing.', 'error');
+    setStatus('Could not save changes. Check the console.', 'error');
+    console.error(err);
   }
 }
 
-function closeEdit() {
-  document.getElementById('editSection').style.display = 'none';
-  document.getElementById('editForm').reset();
-  clearEditErrors();
-}
-
-function clearEditErrors() {
-  document.querySelectorAll('#editForm .error-msg').forEach(el => el.textContent = '');
-  document.querySelectorAll('#editForm .input-error').forEach(el => el.classList.remove('input-error'));
-}
-
-/* ===========================
-   EDIT FORM VALIDATION
-=========================== */
 
 function validateEditForm() {
   let isValid = true;
@@ -170,11 +167,8 @@ function validateEditForm() {
   return isValid;
 }
 
-/* ===========================
-   SAVE EDIT — PUT
-=========================== */
 
-document.getElementById('editForm').addEventListener('submit', async (e) => {
+document.getElementById('editForm').addEventListener('submit', saveEdit); {
   e.preventDefault();
   if (!validateEditForm()) return;
 
@@ -210,29 +204,28 @@ document.getElementById('editForm').addEventListener('submit', async (e) => {
   }
 });
 
-/* ===========================
-   DELETE — DELETE
-=========================== */
 
 async function deleteRecipe(id, title) {
-  const confirmed = confirm(`Delete "${title}"?\n\nThis action cannot be undone.`);
-  if (!confirmed) return;
+  // Step 1 — confirm dialog, exit if cancelled
+  if (!confirm(`Delete "${title}"? This cannot be undone.`)) return;
 
   try {
+    // Step 2 — send DELETE, no headers, no body
     const res = await fetch(`${API}/${id}`, { method: 'DELETE' });
-    if (!res.ok) throw new Error(`Server error: ${res.status}`);
+    if (!res.ok) throw new Error('DELETE failed');
 
-    setStatus(`"${title}" deleted successfully.`, 'success');
+    // Step 3 — reload the list
     await loadAll();
+    setStatus(`"${title}" deleted successfully.`, 'success');
     setTimeout(() => setStatus('', ''), 3000);
+
   } catch (err) {
-    setStatus('Could not delete recipe. Make sure JSON Server is running.', 'error');
+    setStatus('Could not delete. Check the console.', 'error');
+    console.error(err);
   }
 }
 
-/* ===========================
-   STATUS MESSAGE
-=========================== */
+
 
 function setStatus(msg, type) {
   const el = document.getElementById('adminStatus');
@@ -240,8 +233,5 @@ function setStatus(msg, type) {
   el.className = 'status-msg' + (type ? ' ' + type : '');
 }
 
-/* ===========================
-   INIT
-=========================== */
 
 document.addEventListener('DOMContentLoaded', loadAll);

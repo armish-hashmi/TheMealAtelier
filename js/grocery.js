@@ -1,8 +1,6 @@
 const GROCERY_API = 'http://localhost:3000/grocery';
 
-/* ===========================
-   FETCH ALL ITEMS — GET
-=========================== */
+
 
 async function loadGrocery() {
   try {
@@ -16,9 +14,7 @@ async function loadGrocery() {
   }
 }
 
-/* ===========================
-   RENDER LIST
-=========================== */
+
 
 function renderList(items) {
   const ul = document.getElementById('grocery-list');
@@ -38,9 +34,7 @@ function renderList(items) {
   `).join('');
 }
 
-/* ===========================
-   ADD ITEM — POST
-=========================== */
+
 
 async function addItem() {
   const input = document.getElementById('grocery-input');
@@ -61,9 +55,7 @@ async function addItem() {
   }
 }
 
-/* ===========================
-   TOGGLE DONE — PATCH
-=========================== */
+
 
 async function toggleItem(id, done) {
   try {
@@ -79,9 +71,7 @@ async function toggleItem(id, done) {
   }
 }
 
-/* ===========================
-   DELETE ITEM — DELETE
-=========================== */
+
 
 async function deleteItem(id) {
   try {
@@ -93,9 +83,7 @@ async function deleteItem(id) {
   }
 }
 
-/* ===========================
-   CLEAR CHECKED — DELETE all done
-=========================== */
+
 
 async function clearCheckedItems() {
   try {
@@ -116,9 +104,6 @@ async function clearCheckedItems() {
   }
 }
 
-/* ===========================
-   INIT
-=========================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   loadGrocery();

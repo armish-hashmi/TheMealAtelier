@@ -20,7 +20,7 @@
 
 .month-nav button:hover { background: #f0faf5; border-color: #64ab87; }
 
-/* ===== DAY OF WEEK HEADER ===== */
+
 .calendar-dow-header {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -38,7 +38,7 @@
   padding: 6px 0;
 }
 
-/* ===== CALENDAR GRID ===== */
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -46,14 +46,14 @@
   padding: 8px 20px 28px;
 }
 
-/* Empty filler cells for offset */
+
 .calendar-filler {
   min-height: 130px;
   border-radius: 12px;
   background: transparent;
 }
 
-/* ===== DAY CARD ===== */
+
 .day-card {
   background: #fff;
   border: 1px solid #eee;
@@ -84,7 +84,7 @@
   color: #64ab87;
 }
 
-/* ===== MEAL SLOTS ===== */
+
 .meal-slot {
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@
   position: relative;
 }
 
-/* Empty slot */
+
 .meal-slot.empty {
   border: 1px dashed #e0e0e0;
   color: #ccc;
@@ -107,7 +107,7 @@
 
 .meal-slot.empty:hover { border-color: #64ab87; color: #64ab87; background: #f9fffc; }
 
-/* Filled slot */
+
 .meal-slot.filled {
   border: 1px solid transparent;
 }
@@ -154,7 +154,7 @@
 .meal-slot.filled:hover .slot-remove { display: block; }
 .slot-remove:hover { color: #e05; }
 
-/* ===== MEAL PICKER MODAL ===== */
+
 .picker-modal-content {
   width: 100%;
   max-width: 480px;
@@ -211,7 +211,7 @@
   padding: 24px;
 }
 
-/* Meal type tab filters inside modal */
+
 .meal-type-tabs {
   display: flex;
   gap: 6px;
