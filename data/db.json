@@ -155,7 +155,8 @@
         "Peaches",
         "Charries"
       ],
-      "instructions": "Divide 1 cup coconut yogurt between two bowls. Top with detox granola, freshly sliced peaches, and cherries"
+      "instructions": "Divide 1 cup coconut yogurt between two bowls. Top with detox granola, freshly sliced peaches, and cherries",
+      "hidden": false
     },
     {
       "id": "7",
@@ -837,38 +838,9 @@
       ],
       "instructions": "Warm 1/4 cup oil in a large pot over low heat.  Add the onions and let them soften for 10 minutes or so.  As you prepare the other vegetables, add them in turn, with the exception of the zucchini; start with the peppers first.  After the additional of the eggplant, raise the heat to medium and add 1 tablespoon of kosher salt.  Stir well.  As it begins to boil turn the heat to low.  Make the bouquet garni by placing the bay, thyme, parlsey, orange peel then another in between the two pieces of celery and tie together. Press the bouquet garni into the center, cover and continue to simmer for 30 minutes.Meanwhile prepare zucchini and after 30 minutes add to simmer vegetables.  Gently pressing down on zucchini.  Cover and let simmer for 1-2 hours.  Remove from heat and drain the vegetables in a strainer, catching the juices in a heavy saucepan.  Discard the bouquet garni.  Bring the juices to a boil oh medium high until they have reduced to a thick syrup.  Continue to add any accumulated juices from the draining vegetables.  Pour the vegetables in a large bowl; our the syrup on top and gently stir.  Drizzle with olive oil and a few grinds of pepper.  Garnish with fresh basil leaves and basil blossoms.",
       "hidden": false
-    },
-    {
-      "title": "Noodles",
-      "description": "Easy to cook",
-      "calories": 5,
-      "rating": 5,
-      "category": [
-        "Gluten-Free"
-      ],
-      "ingredients": [
-        "Noodles",
-        "Seasoning"
-      ],
-      "instructions": "cook",
-      "image": "",
-      "hidden": false,
-      "id": "k84q8U53IX4"
     }
   ],
   "planner": [
-    {
-      "dayKey": "2026-05-31",
-      "recipeId": 2,
-      "mealTitle": "Spinach & Mushroom Scramble",
-      "id": "KC7xh3TdVL4"
-    },
-    {
-      "dayKey": "2026-06-01",
-      "recipeId": 3,
-      "mealTitle": "Flaxseed Powder Porridge",
-      "id": "A-wvofEMTD4"
-    },
     {
       "dayKey": "2026-06-02",
       "mealType": "Breakfast",
@@ -1517,11 +1489,6 @@
       "done": false
     },
     {
-      "id": "4",
-      "text": "Chicken breasts",
-      "done": false
-    },
-    {
       "id": "5",
       "text": "Basmati rice",
       "done": false
@@ -1529,11 +1496,6 @@
     {
       "id": "6",
       "text": "Soy sauce",
-      "done": false
-    },
-    {
-      "id": "7",
-      "text": "Heavy cream",
       "done": false
     },
     {

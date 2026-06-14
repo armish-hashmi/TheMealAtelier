@@ -98,7 +98,8 @@ async function saveEdit(e) {
     recipe.ingredients  = document.getElementById('edit-ingredients').value.split(',').map(s => s.trim()).filter(Boolean);
     recipe.instructions = document.getElementById('edit-instructions').value.trim();
     recipe.category     = Array.from(document.getElementById('edit-category').selectedOptions).map(o => o.value);
-    recipe.hidden       = document.getElementById('edit-hidden').checked;   = r.hidden;
+    recipe.hidden       = document.getElementById('edit-hidden').checked;   
+    r.hidden;
 
    
     const putRes = await fetch(`${API}/${id}`, {
@@ -202,7 +203,7 @@ document.getElementById('editForm').addEventListener('submit', saveEdit); {
   } catch (err) {
     setStatus('Could not save changes. Make sure JSON Server is running.', 'error');
   }
-});
+};
 
 
 async function deleteRecipe(id, title) {
