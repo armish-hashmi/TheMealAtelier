@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-# JSON Server database (optional — keep if you want sample data in repo)
+# JSON Server database 
 # db.json
 
 # Logs

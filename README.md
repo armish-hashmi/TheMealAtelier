@@ -1,12 +1,12 @@
 # The Meal Atelier
 **Name:** Armish Hashmi
-**Roll No:** [Your Roll Number]
+**Roll No:** F24BDOCS1M01008
 **Course:** Web Technologies SP26 — BSCS 4th Semester
 
 ---
 
 ## Project Description
-The Meal Atelier is a recipe management web application where users can browse, filter, and add recipes. An admin panel allows full management of all recipes including edit, delete, and hiding recipes from users. The app also includes a weekly meal planner and a grocery list manager.
+The Meal Atelier is a recipe management web application where users can browse, filter, and add recipes. An admin panel allows full management of all recipes including edit, delete, and hiding recipes from users. The app also includes a monthly meal planner and a grocery list manager.
 
 ---
 
@@ -63,7 +63,6 @@ Open `index.html` in your browser (use Live Server in VS Code or just open the f
 - Meals stored in JSON Server (POST/PUT/DELETE)
 
 ### Grocery List (grocery.html)
-- 4 categories: Produce, Proteins, Pantry, Dairy & Extras
 - Add items per category (POST)
 - Check off items (PATCH)
 - Delete individual items (DELETE)
@@ -93,6 +92,7 @@ Open `index.html` in your browser (use Live Server in VS Code or just open the f
 ## File Structure
 ```
 TheMealAtelier/
+├── .gitignore
 ├── index.html       User panel
 ├── admin.html       Admin panel
 ├── planner.html     Meal planner
